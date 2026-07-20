@@ -2,7 +2,7 @@
   "repository": "PE_VC_transaction_docs_review",
   "display_name": "PE/VC私募交易文件审阅",
   "skill_id": "pe-vc-transaction-docs-review",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "distribution_profile": "public",
   "file_count": 60,
   "files": [
@@ -28,8 +28,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 2731,
-      "sha256": "6c6a7677455a321358eff1978adf52d91153fc147ab9cd9fb7dc08783efd64ad"
+      "bytes": 3262,
+      "sha256": "64bd126fe5b42f6ff1341389565e140a833c91ec745090fed82c294086f1ab49"
     },
     {
       "path": "SECURITY.md",
@@ -38,13 +38,13 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/SKILL.md",
-      "bytes": 12904,
-      "sha256": "60caa545d10053a7c4d7b403ac1eff37935cb2f9ac0d496c24e3678f98a0f651"
+      "bytes": 13005,
+      "sha256": "3111efc5082c1477be5aa1540f670e0c93f127baf94819931bcaf98bcfdcb1dd"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/agents/openai.yaml",
-      "bytes": 543,
-      "sha256": "beddb28f0e28854f20f1610c195f8d25d48ef6a28f32959f079c7c3ff582ceb8"
+      "bytes": 571,
+      "sha256": "9839630c0f3f7c087bd730582d20563f722a23528a1d0f77ca51aa663f55edd3"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/assets/blind-evaluation-human-scorecard.json",
