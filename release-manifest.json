@@ -2,9 +2,9 @@
   "repository": "PE_VC_transaction_docs_review",
   "display_name": "PE/VC私募交易文件审阅",
   "skill_id": "pe-vc-transaction-docs-review",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "distribution_profile": "public",
-  "file_count": 62,
+  "file_count": 63,
   "files": [
     {
       "path": ".gitignore",
@@ -38,8 +38,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/SKILL.md",
-      "bytes": 15460,
-      "sha256": "a30da13f1a4b3766c870287cbd8750c25172beeeb91f245de3ed10cf55d67059"
+      "bytes": 16898,
+      "sha256": "0efef16397c7840446a1783227017ac53568a0d0955fe5146a084cf1b34fa388"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/agents/openai.yaml",
@@ -128,8 +128,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/faq-and-troubleshooting.md",
-      "bytes": 4371,
-      "sha256": "eefb15d983fd7af160043f2a7fb28f55727abb0444f58d753a1c7718b18e1af7"
+      "bytes": 5592,
+      "sha256": "c4b17eb1f25149cc20d491f4175170a8e0b8a4ffa564549da5e3d23744aab705"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/intake-and-routing.md",
@@ -280,6 +280,11 @@
       "path": "skill/pe-vc-transaction-docs-review/scripts/review_schema.py",
       "bytes": 8533,
       "sha256": "eb95a01edfeec749ca990ca4fa98445c3816971fe321181fd357e25abe51b44d"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/runtime_self_check.py",
+      "bytes": 4344,
+      "sha256": "0d90cc2440270f35c934ec5672f544d74116a824223d2847e97df77c6c6ae561"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/scripts/score_blind_evaluation.py",

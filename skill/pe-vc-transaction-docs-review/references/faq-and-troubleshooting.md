@@ -42,6 +42,23 @@
 - 权限、登录、验证码、付费或上传限制不自动重试，也不要求用户提供密码或验证码。
 - 每次重试使用相同的最小查询范围，避免重复提交或扩大数据传输。
 
+## 本地运行与异常边界
+
+- 核心审阅默认使用本地文件和Skill内置数据，不以任何境外API或外部数据库可用为前提。
+- `scripts/runtime_self_check.py --format json` 在处理用户文件前检查Python版本、核心数据及可选组件；该检查不联网，也不读取用户交易文件。
+- 文档提取、版本比较、市场查询、法律依据查询和输出校验均在命令行边界捕获可预见异常，返回非零状态及简短错误信息，不向用户倾倒堆栈。
+- 输入文件不存在、参数错误或核心数据损坏时停止受影响步骤并标记 `RUNTIME-001`；其他可读文件仍继续处理。
+- `lxml`、`python-docx`、Pillow、macOS OCR或外部连接器属于按功能启用的可选能力。缺失时只停用Word原生批注、模拟评测或OCR等对应功能，不影响文本审阅和问题清单。
+
+Agent需要定位运行问题时，可使用以下最小命令；普通用户无需执行：
+
+```text
+python3 scripts/runtime_self_check.py --format json
+python3 scripts/extract_contract_text.py <file> --format json
+python3 scripts/benchmark_lookup.py "liquidation preference" --json
+python3 scripts/validate_skill_consistency.py
+```
+
 ## 高频问答
 
 ### 文件不齐，是否必须等齐再开始？
