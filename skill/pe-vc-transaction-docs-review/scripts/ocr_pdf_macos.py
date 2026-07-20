@@ -33,6 +33,11 @@ def natural_page_key(path: Path) -> list[object]:
     return [int(part) if part.isdigit() else part for part in re.split(r"(\d+)", path.name)]
 
 
+def fail(code: str, message: str, next_step: str, return_code: int) -> int:
+    print(f"[{code}] {message} Next step: {next_step}", file=sys.stderr)
+    return return_code
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("pdf", type=Path)
@@ -44,8 +49,7 @@ def main() -> int:
 
     pdf = args.pdf.expanduser()
     if not pdf.is_file() or pdf.suffix.lower() != ".pdf":
-        print(f"PDF not found: {pdf}", file=sys.stderr)
-        return 2
+        return fail("OCR-INPUT-001", f"PDF not found or not a PDF: {pdf}.", "Provide an existing PDF file.", 2)
     if args.max_pages < 0:
         print("--max-pages must be zero or greater.", file=sys.stderr)
         return 2
@@ -54,12 +58,20 @@ def main() -> int:
         return 2
     pdftoppm = find_pdftoppm()
     if not pdftoppm:
-        print("pdftoppm not found. Install Poppler or use Codex bundled runtime.", file=sys.stderr)
-        return 2
+        return fail(
+            "OCR-TOOL-001",
+            "The PDF-to-image tool is unavailable.",
+            "Use the bundled Codex runtime, install Poppler, or provide a searchable PDF or Word source.",
+            2,
+        )
     swift = shutil.which("swift")
     if not swift:
-        print("swift not found; macOS Vision OCR requires /usr/bin/swift.", file=sys.stderr)
-        return 2
+        return fail(
+            "OCR-TOOL-002",
+            "macOS Vision OCR is unavailable because Swift was not found.",
+            "Run on macOS with /usr/bin/swift, or provide a searchable PDF or Word source.",
+            2,
+        )
     swift_script = Path(__file__).with_name("ocr_vision.swift")
 
     with tempfile.TemporaryDirectory(prefix="vcpe_pdf_ocr_") as td:
@@ -70,12 +82,20 @@ def main() -> int:
         cmd += [str(pdf), str(prefix)]
         proc = subprocess.run(cmd, text=True, capture_output=True, check=False)
         if proc.returncode != 0:
-            print(proc.stderr.strip() or "pdftoppm failed", file=sys.stderr)
-            return 1
+            return fail(
+                "OCR-CONVERT-001",
+                proc.stderr.strip() or "PDF page conversion failed.",
+                "Check whether the PDF is damaged or encrypted, then provide a decrypted or native source file.",
+                1,
+            )
         images = sorted(Path(td).glob("page-*.png"), key=natural_page_key)
         if not images:
-            print("No page images generated for OCR.", file=sys.stderr)
-            return 1
+            return fail(
+                "OCR-CONVERT-002",
+                "No page images were generated.",
+                "Provide a valid, decrypted PDF or the original Word file.",
+                1,
+            )
         chunks: list[str] = []
         failed_pages: list[int] = []
         for i, image in enumerate(images, start=1):
@@ -91,12 +111,20 @@ def main() -> int:
         try:
             args.output.expanduser().write_text(text, encoding="utf-8")
         except OSError as exc:
-            print(f"Could not write OCR output: {exc}", file=sys.stderr)
-            return 2
+            return fail(
+                "OCR-OUTPUT-001",
+                f"Could not write OCR output: {exc}",
+                "Choose a writable output path and rerun OCR.",
+                2,
+            )
     else:
         print(text)
     if failed_pages:
-        print(f"OCR failed on page(s): {', '.join(str(page) for page in failed_pages)}", file=sys.stderr)
+        print(
+            f"[OCR-PARTIAL-001] OCR failed on page(s): {', '.join(str(page) for page in failed_pages)}. "
+            "Next step: provide clearer scans or a searchable PDF/Word source for those pages; do not treat the file as fully reviewed.",
+            file=sys.stderr,
+        )
         return 0 if args.allow_partial else 1
     return 0
 

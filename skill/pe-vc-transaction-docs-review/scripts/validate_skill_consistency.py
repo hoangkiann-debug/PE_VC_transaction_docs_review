@@ -92,7 +92,7 @@ def main() -> int:
     ap.add_argument("--max-authority-age-days", type=int, default=180)
     args = ap.parse_args()
     if args.max_authority_age_days < 1:
-        print("--max-authority-age-days must be positive", file=sys.stderr)
+        print("[ERROR][CONSISTENCY-INPUT-001] --max-authority-age-days must be positive", file=sys.stderr)
         return 2
 
     errors: list[str] = []
@@ -188,11 +188,15 @@ def main() -> int:
         errors.append("agents/openai.yaml default_prompt must mention the skill with $skill-name")
 
     for warning in warnings:
-        print(f"WARNING: {warning}", file=sys.stderr)
+        print(f"[WARNING][CONSISTENCY-WARNING] {warning}", file=sys.stderr)
     if errors:
         for error in errors:
-            print(f"ERROR: {error}", file=sys.stderr)
-        print(f"FAILED: {len(errors)} consistency error(s)", file=sys.stderr)
+            print(f"[ERROR][CONSISTENCY-BLOCKING] {error}", file=sys.stderr)
+        print(
+            f"[FAILED][CONSISTENCY-BLOCKING] {len(errors)} blocking error(s). "
+            "Next step: fix every listed file or resource error, then rerun this validator before delivery.",
+            file=sys.stderr,
+        )
         return 1
     print(
         f"OK: skill consistency validated ({len(markdown_files)} markdown files, "

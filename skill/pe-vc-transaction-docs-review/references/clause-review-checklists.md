@@ -173,7 +173,7 @@ was reviewed.
 - Consistency across SPA/SHA/Articles/side letters.
 - Joinder, consolidation, parallel proceedings, nonsignatory obligors/guarantors,
   survival after termination or invalidity, and conflicts caused by transfer or novation.
-- Local counsel confirmation for non-PRC law.
+- 涉及中国法律相关事项，请咨询执业中国律师；涉及非中国法管辖事项，请咨询相应法域的执业律师。
 - For PRC-law arbitration after 2026-03-01, check the current Arbitration Law,
   including selected institution, scope, seat for foreign-related arbitration,
   interim measures, service, and applicable institutional rules.

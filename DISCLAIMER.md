@@ -1,8 +1,5 @@
-# Disclaimer
+# 使用提示
 
-This project provides workflow assistance and issue-spotting support. It does
-not provide legal advice, create a lawyer-client relationship, or replace the
-judgment of qualified counsel. Laws, regulatory rules, market practice, and
-transaction facts change. Users must verify current primary authorities,
-document text, governing law, party identity, and matter-specific facts before
-relying on any output.
+本项目提供交易文件审阅、问题识别和谈判辅助，不构成针对具体事项的正式法律意见，也不能替代承办律师结合具体项目作出的专业判断。法律法规、监管口径、市场实践和交易事实均可能变化，使用任何输出前应核验最新一手依据、文件正文、适用法律、交易主体和项目事实。
+
+涉及中国法律相关事项，请咨询执业中国律师；涉及非中国法管辖事项，请咨询相应法域的执业律师。

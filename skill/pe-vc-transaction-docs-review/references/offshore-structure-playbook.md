@@ -33,7 +33,7 @@ Every key VC/PE clause in the benchmark remains relevant under offshore USD stru
 - Board composition, reserved matters, protective provisions, information/inspection/management rights.
 - Founder vesting/restrictions, leaver repurchase, non-compete/non-solicit, founder secondary sale.
 - ROFR, co-sale, drag, permitted transfers, competitor restrictions, MFN.
-- Governing law, arbitration, service, interim measures, local counsel confirmations.
+- Governing law, arbitration, service, interim measures, and jurisdiction-specific lawyer consultation.
 
 ## Offshore-Specific Checks
 
@@ -41,7 +41,7 @@ Articles/SHA consistency:
 
 - Preferred share rights must be reflected consistently in Articles and SHA/IRA.
 - Check share class names, conversion price, liquidation waterfall, voting thresholds, reserved matters, drag, ROFR/co-sale, transfer restrictions, redemption, and information rights.
-- If Articles conflict with SHA, flag which should govern and whether local counsel must confirm.
+- If Articles conflict with SHA, flag which should govern and which jurisdiction's practicing lawyer should be consulted.
 
 SPA/SHA/Disclosure consistency:
 
@@ -70,7 +70,7 @@ VIE issues:
 Non-PRC law:
 
 - Do not provide final legal opinions on Cayman, Hong Kong, Delaware, New York, Singapore, or other non-PRC law.
-- State "local counsel confirmation required" for company power, share redemption legality, enforceability of liquidation preference, fiduciary duties, director indemnity, governing law, and arbitration enforcement where applicable.
+- For company power, share redemption legality, enforceability of liquidation preference, fiduciary duties, director indemnity, governing law, and arbitration enforcement, use this notice where applicable: `涉及中国法律相关事项，请咨询执业中国律师；涉及非中国法管辖事项，请咨询相应法域的执业律师。`
 - If a PRC-related or foreign-related arbitration clause may engage PRC
   arbitration law, separately check the institution, seat, interim-measure path,
   service, and enforcement interface under the law effective from 2026-03-01;

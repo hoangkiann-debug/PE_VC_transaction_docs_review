@@ -129,7 +129,7 @@ Use only two top-level structures:
    - Direct holding: offshore company directly or indirectly holds PRC operating entities through equity.
    - VIE: offshore company controls PRC operating entities through contractual control.
 
-All benchmarked key clauses matter under both structures. The structure changes enforceability, drafting mechanics, governing law, and local counsel flags; it does not remove the need to review any core clause.
+All benchmarked key clauses matter under both structures. The structure changes enforceability, drafting mechanics, governing law, and the relevant practicing-lawyer consultation notice; it does not remove the need to review any core clause. Use: `涉及中国法律相关事项，请咨询执业中国律师；涉及非中国法管辖事项，请咨询相应法域的执业律师。`
 
 ## Language Routing
 

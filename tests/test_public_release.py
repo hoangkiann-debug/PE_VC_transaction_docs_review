@@ -36,6 +36,9 @@ class PublicReleaseTests(unittest.TestCase):
         self.assertIn("## 典型使用案例", text)
         self.assertIn("## 常见问题", text)
         self.assertIn("## 常见错误用法与正确处理", text)
+        self.assertIn("references/complete-output-example.md", text)
+        self.assertIn("references/faq-and-troubleshooting.md", text)
+        self.assertIn("license: Apache-2.0", text)
         self.assertTrue((SKILL / "agents" / "openai.yaml").is_file())
 
     def test_outward_documentation_copy(self):

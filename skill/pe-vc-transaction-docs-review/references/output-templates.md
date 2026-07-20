@@ -66,7 +66,8 @@ Do not add more than five columns; compress details into the five cells.
 - Our position:
 - Market data: Based on historical statistics for comparable VC/PE projects, [data].
 - Legal basis: [include only if legal/enforcement issue; omit for purely commercial issues]
-- Authority / verification status: [effective and verified / effective guidance / draft-nonbinding / pending legal research / local counsel confirmation required]
+- Authority / verification status: [effective and verified / effective guidance / draft-nonbinding / pending legal research / practicing lawyer consultation required]
+- Legal notice: [涉及中国法律相关事项，请咨询执业中国律师；涉及非中国法管辖事项，请咨询相应法域的执业律师。]
 - Risk level:
 - Proposed revised wording:
 

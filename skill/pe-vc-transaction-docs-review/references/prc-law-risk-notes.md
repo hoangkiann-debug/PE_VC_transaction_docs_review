@@ -93,7 +93,7 @@ Check:
 - Interim measures and preservation.
 - Service addresses and deemed service.
 - Consolidation or related proceedings where SPA/SHA/articles/side letters are all involved.
-- For offshore documents, mark non-PRC law and enforcement points for local counsel.
+- For offshore documents, identify the governing-law and enforcement issues, then state: `涉及中国法律相关事项，请咨询执业中国律师；涉及非中国法管辖事项，请咨询相应法域的执业律师。`
 - For PRC-law arbitration, use the 2025 revised Arbitration Law effective from
   2026-03-01. Check Articles 27 and 29 for the institution/scope elements,
   Articles 39 and 58 for interim measures, Article 72 for the current setting-

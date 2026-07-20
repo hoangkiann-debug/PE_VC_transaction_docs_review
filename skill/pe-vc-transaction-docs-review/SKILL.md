@@ -2,6 +2,14 @@
 name: pe-vc-transaction-docs-review
 description: >-
   面向未上市公司股权融资的专业交易文件审阅能力。适用于境内人民币架构及红筹/VIE 美元架构（尽管当前使用比例有所下降）；支持公司/创始人方、投资人、领投/跟投及战略投资人等不同立场；可审阅首轮整套文件初稿，跟踪后续多轮红线版本，并核验跨文件之间的冲突；可输出完整的修改意见与建议、修订后版本、主要问题清单以及 main control list 等；突出优势是结合大量同类市场项目的统计数据，对于同一核心条款，不仅可提示市场主流做法与写法，还能提供不同做法的大致市场采用比例，并进一步给出相应的谈判建议。适用于增资协议、认购协议、股东协议、公司章程、SPA、SHA、IRA、M&A/M&AA、term sheet、side letter及Track Changes。基金设立备案、纯AMAC事项、破产重整投资、单独许可/BD合同及已上市公司证券争议不属于主要适用范围，除非与本次未上市公司投融资协议审阅直接相关。
+license: Apache-2.0
+metadata:
+  short-description: "PE/VC未上市公司股权融资文件审阅与谈判辅助"
+  maintainer: "hoangkiann-debug"
+  homepage: "https://github.com/hoangkiann-debug/PE_VC_transaction_docs_review"
+  support: "https://github.com/hoangkiann-debug/PE_VC_transaction_docs_review/issues"
+  last-reviewed: "2026-07-21"
+  languages: "zh-CN, en"
 ---
 
 # PE/VC私募交易文件审阅
@@ -21,6 +29,18 @@ description: >-
 ## 快速开始
 
 用户无需配置或逐个运行本 Skill 的脚本。先读取用户指令和文件包，只询问文件中无法判断的必要信息。
+
+最简单的用法：上传交易文件后直接说：
+
+> 请使用 $pe-vc-transaction-docs-review 审阅这些文件。
+
+Skill 应先自动识别可判断的信息，再一次性询问仍然缺少的审阅立场、交易架构、版本基线和交付方式，不要求用户学习脚本或提示词工程。
+
+### 运行条件
+
+- 日常调用无需用户安装或配置脚本；由 Agent 按需调用 Skill 内工具。
+- 文本、可搜索PDF和Word文件可直接处理；扫描PDF的OCR为可选能力，工具不可用时按 `references/faq-and-troubleshooting.md` 降级。
+- 外部法律或企业信息连接器均为可选能力，不影响现有文件的基础审阅；任何连接状态必须在当次实际核验。
 
 ### 首轮整套文件审阅
 
@@ -58,7 +78,7 @@ description: >-
 
 - 输入：Share Subscription Agreement、Shareholders Agreement、M&A及VIE文件（如适用）。
 - 重点：交割条件、清算优先、董事席位、保护性条款、信息权、创始人限制及境内外文件衔接。
-- 输出：英文批注或报告，并把香港、开曼、特拉华等非中国法问题标记为当地律师确认事项。
+- 输出：英文批注或报告；涉及中国法律相关事项，请咨询执业中国律师；涉及非中国法管辖事项，请咨询相应法域的执业律师。
 
 ### 案例三：第二轮对方红线稿
 
@@ -76,7 +96,7 @@ description: >-
 
 1. 读取 `references/review-quality-gates.md`、`references/intake-and-routing.md` 和 `references/matter-profile-and-confidentiality.md`，先完成事项识别和必要信息门槛。
 2. 使用 `scripts/build_document_map.py` 建立整套文件地图。文件名只能作为文种、语言、架构和版本的初步线索，最终以正文为准。
-3. 使用 `scripts/extract_contract_text.py` 提取全部范围内文件。提取为空或失败时，视情况使用 `scripts/ocr_pdf_macos.py`；仍不可读的文件必须标记为未实质审阅。
+3. 使用 `scripts/extract_contract_text.py` 提取全部范围内文件。提取为空或失败时，视情况使用 `scripts/ocr_pdf_macos.py`；仍不可读的文件必须标记为未实质审阅，并按 `references/faq-and-troubleshooting.md` 告知用户可执行的下一步。
 4. 多文件项目使用 `scripts/build_package_matrix.py` 检查定义、金额、股权比例、权利安排和争议解决的候选冲突，再回到协议正文确认。
 5. 根据主协议正文确定输出语言：中文文件使用中文，英文文件默认使用英文；保留原文中的定义、条款编号和法律术语。
 6. Track Changes审阅使用 `scripts/extract_contract_text.py --scope track-changes`。优先阅读 `changed_paragraphs` 的修改前后文本；修改量过大时，先让用户选择全面、核心条款或 Major Issue List 聚焦模式。
@@ -87,7 +107,7 @@ description: >-
 11. 使用 `references/market-benchmarks-2023-2024.md`、`references/benchmark-data.json` 或 `scripts/benchmark_lookup.py` 查询市场背景。2025数据为主要锚点；2024与2025口径可比时使用两年平均；不可比时仅用2025并在内部记录。
 12. 法律效力或可执行性问题读取 `references/legal-authority-protocol.md`、`references/legal-authorities.json`、`references/prc-law-risk-notes.md` 和 `references/article-digest.md`，并用 `scripts/legal_authority_lookup.py` 核验效力层级、状态、定位和日期。二手文章不是一手法律依据。
 13. 按用户立场使用 `references/party-side-positions.md`。
-14. 按 `references/output-templates.md` 和 `references/comment-only-review-mode.md` 交付。Word批注必须锚定当前可见正文中的唯一原文片段，并另存输出文件，不覆盖源文件。
+14. 按 `references/output-templates.md` 和 `references/comment-only-review-mode.md` 交付；需要查看成品形态时读取 `references/complete-output-example.md`。Word批注必须锚定当前可见正文中的唯一原文片段，并另存输出文件，不覆盖源文件。
 15. 首轮重大问题生成 Major Issue List；后续轮次使用 `scripts/update_major_issue_list.py` 保持 Issue ID 稳定并更新状态。
 16. 交付前使用 `scripts/validate_issue_log.py`、`scripts/validate_major_issue_list.py` 和 `scripts/validate_skill_consistency.py` 完成适用的质量检查。
 
@@ -114,7 +134,7 @@ description: >-
 - **Major Issue List**：仅跟踪实质谈判问题，首轮建立、后续更新。
 - **红线稿**：只有用户明确要求时才制作；首轮通常优先使用批注加问题清单。
 
-脚本是内部执行工具，用户无需逐项配置。某项工具不可用时，应继续完成可可靠完成的部分，并明确降级范围和剩余人工步骤。
+脚本是内部执行工具，用户无需逐项配置。某项工具不可用时，应继续完成可可靠完成的部分，并按 `references/faq-and-troubleshooting.md` 使用统一问题编号说明：未完成什么、为什么、用户下一步做什么、哪些部分仍可继续。
 
 ## 常见问题
 
@@ -140,7 +160,9 @@ description: >-
 
 ### 6. 香港、开曼或美国法条款能给最终结论吗？
 
-不能。可以识别问题、提供谈判和起草建议，但最终法律结论应标记为相应法域律师确认。
+不能替代相应法域执业律师的专业判断。统一提示为：涉及中国法律相关事项，请咨询执业中国律师；涉及非中国法管辖事项，请咨询相应法域的执业律师。
+
+更多高频问题、问题编号和逐步修复方法见 `references/faq-and-troubleshooting.md`。
 
 ## 常见错误用法与正确处理
 
@@ -154,11 +176,22 @@ description: >-
 | 用本 Skill 审基金设立备案、已上市公司证券争议或独立BD许可协议 | 超出主要条款体系 | 改用对应专业流程，或先明确仅审与本轮未上市公司融资直接相关的部分 |
 | 未经确认跨项目引用其他交易材料 | 可能混淆事项边界 | 默认只使用当前事项材料；跨事项比较需用户明确授权 |
 
+### 边界场景判断
+
+| 场景 | 是否适用 | 处理方式 |
+|---|---|---|
+| 未上市目标公司计划未来上市，当前审阅本轮融资协议 | 适用 | 审阅特殊权利终止、恢复及Pre-IPO安排 |
+| 上市公司作为投资人投资未上市目标公司 | 适用 | 仍以未上市目标公司的本轮股权融资文件为审阅对象 |
+| 已上市公司自身的证券发行、并购、对赌或回购争议 | 不适用 | 改用上市公司证券或并购专项流程 |
+| 基金设立、备案或纯AMAC合规 | 不适用 | 改用基金设立或资管合规专项流程 |
+| side letter、ESOP或VIE文件直接影响本轮融资权利 | 适用 | 纳入文件地图并核验与主协议、章程的一致性 |
+| 独立许可、BD或商业合作合同，不影响本轮融资权利 | 不适用 | 改用对应合同审阅流程 |
+
 ## 质量与安全边界
 
 - `references/review-quality-gates.md` 是完成标准：文件不可读、后续轮次缺基线却作接受/拒绝结论、或只依据未核验/草案来源作法律结论，均不算审阅完成。
 - 已上市公司自身的对赌、回购或证券争议不进入本 Skill；未上市目标公司的Pre-IPO特殊权利安排，以及上市公司作为投资人投资未上市目标公司，仍可适用。
-- 不对香港、开曼、特拉华、纽约、新加坡等非中国法事项给出最终法律意见，应标记当地律师确认点。
+- 涉及中国法律相关事项，请咨询执业中国律师；涉及非中国法管辖事项，请咨询相应法域的执业律师。
 - 不默认缺失的披露函、章程、side letter、ESOP、VIE文件或批准文件“没有问题”。
 - 企业信息查询结果不能替代交易文件中的正式披露。
 - 未经用户明确授权，不跨事项读取或比较其他项目材料。

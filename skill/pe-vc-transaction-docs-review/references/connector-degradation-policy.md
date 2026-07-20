@@ -8,6 +8,12 @@
 
 Never call a connector "connected" merely because an MCP config, API key, or user statement exists.
 
+## Retry And Timeout Rule
+
+- Retry the same read-only request at most two times, and only when the failure is transient rather than caused by permissions, login, parameters, CAPTCHA, payment, or unsupported scope.
+- Stop a single request after 30 seconds when the tool permits timeout control. Mark it `CONNECTOR-001` and continue the reliable local work described in `references/faq-and-troubleshooting.md`.
+- Never broaden the query, upload more files, or ask for passwords, tokens, or verification codes merely to make a retry succeed.
+
 ## Legal Research
 
 Connected:
@@ -56,3 +62,4 @@ If PDF text extraction is empty:
 - Treat the PDF as scanned/image-only until proven otherwise.
 - Run `scripts/ocr_pdf_macos.py` on macOS where feasible.
 - If OCR is not run or fails, mark the file as not substantively reviewed and request an OCR text layer or Word/native source file.
+- Report the applicable `OCR-*` problem number and the concrete next step from `references/faq-and-troubleshooting.md`.

@@ -113,12 +113,11 @@ As last verified on 2026-07-13:
   needs a legal basis. The rule against naming the benchmark source does not
   apply to statutes, regulations, or judicial authorities.
 - Separate three propositions: agreement text/fact, market context, and legal rule.
-- State whether a conclusion is verified, pending research, draft-based,
-  fact-dependent, or requires non-PRC local counsel.
+- State whether a conclusion is verified, pending research, draft-based, or
+  fact-dependent.
 - Do not claim that a clause is enforceable merely because it is common, or that
   it is uncommon merely because it may be difficult to enforce.
-- For non-PRC governing law, identify the issue and drafting risk, then mark the
-  conclusion `local counsel confirmation required`.
+- Use this notice for legal matters: `涉及中国法律相关事项，请咨询执业中国律师；涉及非中国法管辖事项，请咨询相应法域的执业律师。`
 
 ## Freshness Trigger
 
