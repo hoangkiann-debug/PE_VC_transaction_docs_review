@@ -33,7 +33,23 @@ class PublicReleaseTests(unittest.TestCase):
         text = (SKILL / "SKILL.md").read_text(encoding="utf-8")
         self.assertTrue(text.startswith("---\nname: pe-vc-transaction-docs-review\n"))
         self.assertIn("# PE/VC私募交易文件审阅", text)
+        self.assertIn("## 典型使用案例", text)
+        self.assertIn("## 常见问题", text)
+        self.assertIn("## 常见错误用法与正确处理", text)
         self.assertTrue((SKILL / "agents" / "openai.yaml").is_file())
+
+    def test_outward_documentation_avoids_removed_disclosure_copy(self):
+        forbidden = [
+            "公开版不包含",
+            "公开版本采用明确的文件白名单",
+            "It intentionally does not include",
+            "It excludes client",
+            "public package intentionally omits",
+        ]
+        for path in [ROOT / "README.md", ROOT / "PRIVACY.md", SKILL / "SKILL.md", SKILL / "references" / "article-digest.md"]:
+            content = path.read_text(encoding="utf-8")
+            for phrase in forbidden:
+                self.assertNotIn(phrase, content, f"removed outward wording returned in {path}")
 
     def test_every_routed_resource_exists(self):
         pattern = re.compile(r"(?<![A-Za-z0-9_.-])((?:references|scripts|assets)/[A-Za-z0-9_./&:-]+(?:\.md|\.json|\.py|\.swift|\.csv))")

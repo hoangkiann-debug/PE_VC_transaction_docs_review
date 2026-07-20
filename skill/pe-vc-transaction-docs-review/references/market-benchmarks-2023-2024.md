@@ -1,9 +1,8 @@
 # Market Benchmarks 2024-2025
 
 The filename is retained for compatibility with older workflow references.
-Public verification date: 2026-07-10. The bundled structured data intentionally
-omits the development source registry, file hashes, and page-level provenance.
-Independently verify historical figures before high-stakes reliance or updates.
+Verification date: 2026-07-10. Independently verify historical figures before
+high-stakes reliance or updates.
 
 Use this as negotiation context, not legal authority. User-facing outputs must refer to the source only as "historical statistics for comparable VC/PE projects" or similar. Do not name the underlying report source.
 

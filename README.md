@@ -1,23 +1,24 @@
 # PE/VC私募交易文件审阅
 
-面向**未上市公司股权融资**的开源交易文件审阅 Skill。它可以从公司/创始方或投资人立场出发，对人民币境内融资和境外美元融资文件进行结构化审阅，并生成律师可继续使用的审阅结果。
+面向**未上市公司股权融资**的专业交易文件审阅 Skill。覆盖人民币境内及境外美元直持/VIE架构，支持公司/创始方与投资人立场、首轮整套文件及后续红线稿审阅。
 
 机器识别名称为 `pe-vc-transaction-docs-review`。GitHub 仓库和安装包使用 `PE_VC_transaction_docs_review`，因为这些位置不能使用 `/`。
 
 ## 主要能力
 
-- 识别交易结构、文件版本、签约主体和整套文件之间的不一致；
-- 审阅增资协议、认购协议、股东协议、公司章程及相关补充文件；
-- 支持首轮全包审阅以及对方红线稿的后续轮次审阅；
-- 输出问题清单、逐条批注计划、修改建议和 Major Issue List；
-- 提供历史市场做法作为谈判背景，并提示需要核验的现行法律依据；
-- 支持可回滚的 Word 原生批注工作流。
+- 覆盖人民币境内融资及境外美元直持/VIE架构；
+- 支持公司/创始方、投资人、领投/跟投及战略投资人立场；
+- 审阅增资协议、认购协议、股东协议、公司章程及相关配套文件；
+- 追踪对方红线稿，识别新增、遗留、重开和已解决的问题；
+- 检查定义、金额、股权、权利安排和争议解决的跨文件冲突；
+- 对核心条款提示历史市场方向、不同方案的大致采用比例和谈判空间；
+- 输出问题清单、完整修改条款、Word原生批注和 Major Issue List。
 
 ## 安装
 
 ### WorkBuddy
 
-从 [GitHub Releases](https://github.com/hoangkiann-debug/PE_VC_transaction_docs_review/releases/latest) 下载 `PE_VC_transaction_docs_review-0.1.0-workbuddy.zip`，再通过 WorkBuddy 的本地 Skill 导入功能上传。压缩包内只有一个顶层目录：`pe-vc-transaction-docs-review`。
+可以直接从 [SkillHub](https://skillhub.cn/skills/pe-vc-transaction-docs-review) 安装，也可以从 [GitHub Releases](https://github.com/hoangkiann-debug/PE_VC_transaction_docs_review/releases/latest) 下载最新的 WorkBuddy ZIP 安装包。
 
 ### Codex
 
@@ -40,8 +41,6 @@
 - 市场数据仅用于提供历史谈判背景，不是法律要求；法律法规、监管口径和市场实践可能变化，使用时应核验最新一手依据；
 - 非中国法管辖事项应由相应法域的合资格律师确认。
 
-## 隐私与开源
+## 许可与责任
 
-公开版本采用明确的文件白名单生成，不包含客户文件、客户或交易参与方名称、私有文章原文、内部案例材料、本地路径或底层来源登记表。用户仍应自行判断其交易文件是否适合交由具体平台或连接器处理。
-
-本项目采用 Apache License 2.0。详细边界见 [DISCLAIMER.md](DISCLAIMER.md)、[PRIVACY.md](PRIVACY.md)、[SECURITY.md](SECURITY.md)；版本内容及文件校验值见 [release-manifest.json](release-manifest.json)。
+本项目采用 Apache License 2.0。使用者应自行判断交易文件是否适合交由具体平台或连接器处理。详细边界见 [DISCLAIMER.md](DISCLAIMER.md)、[PRIVACY.md](PRIVACY.md)、[SECURITY.md](SECURITY.md)；版本内容及文件校验值见 [release-manifest.json](release-manifest.json)。

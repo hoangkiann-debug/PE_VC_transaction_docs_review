@@ -2,7 +2,7 @@
   "repository": "PE_VC_transaction_docs_review",
   "display_name": "PE/VC私募交易文件审阅",
   "skill_id": "pe-vc-transaction-docs-review",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "distribution_profile": "public",
   "file_count": 60,
   "files": [
@@ -23,13 +23,13 @@
     },
     {
       "path": "PRIVACY.md",
-      "bytes": 430,
-      "sha256": "2f52590b03f8d78878e282e474e990edec8eeb41463946830f1ed112353ad71a"
+      "bytes": 232,
+      "sha256": "7f58cbfd79713ac91a3ece770b1bd7be729a6598716a4ced0713151083de6045"
     },
     {
       "path": "README.md",
-      "bytes": 2900,
-      "sha256": "77bff9f87605f919de07bb18a88826c984eb43c8a0b66fae91b6203e4cad343b"
+      "bytes": 2731,
+      "sha256": "6c6a7677455a321358eff1978adf52d91153fc147ab9cd9fb7dc08783efd64ad"
     },
     {
       "path": "SECURITY.md",
@@ -38,13 +38,13 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/SKILL.md",
-      "bytes": 19680,
-      "sha256": "3cbcfb2f128ca2fa077d917e432b3b331b5870b01fc8f03f379af2ba556c4190"
+      "bytes": 12904,
+      "sha256": "60caa545d10053a7c4d7b403ac1eff37935cb2f9ac0d496c24e3678f98a0f651"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/agents/openai.yaml",
-      "bytes": 447,
-      "sha256": "c26ee8294bf3a67a025810e21bee155f0fff3218fb9cfc7721cf390fe0800e7f"
+      "bytes": 543,
+      "sha256": "beddb28f0e28854f20f1610c195f8d25d48ef6a28f32959f079c7c3ff582ceb8"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/assets/blind-evaluation-human-scorecard.json",
@@ -88,8 +88,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/article-digest.md",
-      "bytes": 1044,
-      "sha256": "688c186fbd16e418c413e8150f841f526db7e81ed263904c2ea8c9bec7600608"
+      "bytes": 922,
+      "sha256": "b1d666f2af2859368feb481c2320033027d903703620fec7c6d22abf63ba8a10"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/benchmark-data.json",
@@ -138,8 +138,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/market-benchmarks-2023-2024.md",
-      "bytes": 12813,
-      "sha256": "9d53fde255b484f12a3c1efffd9accc1ddcd949cb0da8aebf192ad130eb60be9"
+      "bytes": 12685,
+      "sha256": "b4dd465bfbef9e23a773ef6e118399fdcd75280971241db0d9ee5009290820a5"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/matter-profile-and-confidentiality.md",
@@ -303,8 +303,8 @@
     },
     {
       "path": "tests/test_public_release.py",
-      "bytes": 8423,
-      "sha256": "1e24828f0f570ab1233aa6dd435619d42e9b73bb32034ab30c1f1c369271ce06"
+      "bytes": 9238,
+      "sha256": "43f1c5354ec263c97cf27a9e25898e87fc766b5968c7b19de3defa0a2ed47107"
     }
   ]
 }

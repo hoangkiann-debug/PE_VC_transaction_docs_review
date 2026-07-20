@@ -1,9 +1,7 @@
 # Public Research Digest
 
-This public package contains distilled issue-spotting prompts, structure
-playbooks, clause checklists, market-context data, and a current legal-authority
-registry. It intentionally does not include the private article corpus or any
-client matter files used during development.
+This research digest provides issue-spotting prompts, structure playbooks,
+clause checklists, market-context data, and a current legal-authority registry.
 
 Treat commentary as secondary material. Use it to identify issues, arguments,
 and drafting alternatives, then verify every legal proposition under

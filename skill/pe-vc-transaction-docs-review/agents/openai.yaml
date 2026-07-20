@@ -1,6 +1,6 @@
 interface:
   display_name: "PE/VC私募交易文件审阅"
-  short_description: "审阅 VC/PE 协议、红线稿和主要争议清单"
-  default_prompt: "Use $pe-vc-transaction-docs-review to run intake on this PE/VC agreement package or markup, check version and cross-document consistency, then prepare source-disciplined native comments or a comment plan and update the Major Issue List where useful."
+  short_description: "审阅人民币及美元融资文件，核验红线、跨文件冲突与市场比例"
+  default_prompt: "请使用 $pe-vc-transaction-docs-review 审阅这套未上市公司股权融资交易文件：先识别人民币或美元架构、审阅立场、文件版本和跨文件冲突，再结合历史市场数据与现行法律依据，输出问题清单、完整修改建议、Word批注及必要的Major Issue List。"
 policy:
   allow_implicit_invocation: true
