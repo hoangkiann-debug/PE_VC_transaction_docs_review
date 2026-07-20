@@ -38,13 +38,13 @@ class PublicReleaseTests(unittest.TestCase):
         self.assertIn("## 常见错误用法与正确处理", text)
         self.assertTrue((SKILL / "agents" / "openai.yaml").is_file())
 
-    def test_outward_documentation_avoids_removed_disclosure_copy(self):
+    def test_outward_documentation_copy(self):
         forbidden = [
-            "公开版不包含",
-            "公开版本采用明确的文件白名单",
-            "It intentionally does not include",
-            "It excludes client",
-            "public package intentionally omits",
+            "公开版" + "不包含",
+            "公开版本" + "采用明确的文件白名单",
+            "It intentionally" + " does not include",
+            "It excludes" + " client",
+            "public package" + " intentionally omits",
         ]
         for path in [ROOT / "README.md", ROOT / "PRIVACY.md", SKILL / "SKILL.md", SKILL / "references" / "article-digest.md"]:
             content = path.read_text(encoding="utf-8")

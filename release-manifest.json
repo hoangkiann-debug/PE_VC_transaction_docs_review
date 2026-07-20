@@ -33,8 +33,8 @@
     },
     {
       "path": "SECURITY.md",
-      "bytes": 318,
-      "sha256": "68e6f73509c5f5e98808dbce1f4c5e9cbe570cc424d09a6398583b2b2ca5dc71"
+      "bytes": 322,
+      "sha256": "669d896ac16ac73248b03dfab594bcc4310085d799a3170a2adde3918a7100a4"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/SKILL.md",
@@ -303,8 +303,8 @@
     },
     {
       "path": "tests/test_public_release.py",
-      "bytes": 9238,
-      "sha256": "43f1c5354ec263c97cf27a9e25898e87fc766b5968c7b19de3defa0a2ed47107"
+      "bytes": 9237,
+      "sha256": "3230a2ef83853e14c9990aa6fd76ee21101d326ab97c9b1ac3f2886e1d55fea9"
     }
   ]
 }
