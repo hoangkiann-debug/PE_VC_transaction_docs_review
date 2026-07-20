@@ -1,0 +1,310 @@
+{
+  "repository": "PE_VC_transaction_docs_review",
+  "display_name": "PE/VC Transaction Docs Review",
+  "skill_id": "pe-vc-transaction-docs-review",
+  "version": "0.1.0-beta.1",
+  "distribution_profile": "public",
+  "file_count": 60,
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 67,
+      "sha256": "6a34935c87db8133dad26005b130c50bf486023f626c5ddd5b825e7e1f1693cd"
+    },
+    {
+      "path": "DISCLAIMER.md",
+      "bytes": 421,
+      "sha256": "81f30e7e0d3976e98deaebde8910a3600e2521e8298df9dc7344d2a00d6d0d6e"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11372,
+      "sha256": "6ccfccb33c5eec6436a2b294deca60dac0528481f763e48c6b14cf574ad54bb3"
+    },
+    {
+      "path": "PRIVACY.md",
+      "bytes": 430,
+      "sha256": "2f52590b03f8d78878e282e474e990edec8eeb41463946830f1ed112353ad71a"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1530,
+      "sha256": "51f4769da3bb9d3016f4c8eaa43007587553521f15ddd5b0259867838c5a9fb1"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 318,
+      "sha256": "68e6f73509c5f5e98808dbce1f4c5e9cbe570cc424d09a6398583b2b2ca5dc71"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/SKILL.md",
+      "bytes": 19680,
+      "sha256": "54d13b4b73a1b954a02e85acdb9039c4c8b767a57aba44c2a2c7fb8ccfba9209"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/agents/openai.yaml",
+      "bytes": 447,
+      "sha256": "70c899e057023d5e21e05515eb0860c32d1417aa3323732fa0e41cb69081cf48"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/assets/blind-evaluation-human-scorecard.json",
+      "bytes": 409,
+      "sha256": "2703f4b32105dcab7640facab643782d18c88b009747bfd6aa07ee2ed88275c2"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/assets/comment-plan-template-zh.csv",
+      "bytes": 104,
+      "sha256": "c10dbaa76db4445f8322658aaf344c501f5d4e3cf22d6a101b1092de094f74a1"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/assets/comment-plan-template.csv",
+      "bytes": 108,
+      "sha256": "90270d583f86b617e10cee0e3bd39864538567361b44300e0b2f207fb5d92eab"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/assets/issue-log-template-zh.csv",
+      "bytes": 221,
+      "sha256": "d4e6012db9b00c38efc763bfa9f511e6ad4d86692f5de5a5292f6bba68449371"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/assets/issue-log-template.csv",
+      "bytes": 215,
+      "sha256": "873b30cbcf7ca34e73b4daa9ef699787e59d7b6c4c892d1b3f022502938db3c2"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/assets/major-issue-list-template-zh.csv",
+      "bytes": 85,
+      "sha256": "e6402b112159867d106a38c275f23e36777f21f9219b31c88ec9301caf9a6633"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/assets/major-issue-list-template.csv",
+      "bytes": 95,
+      "sha256": "7454766573bb1d78fe1f18e7ed1e89de72875fe95d2d4778acacd44d18b4aa46"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/assets/matter-profile-template.md",
+      "bytes": 625,
+      "sha256": "7490a82875034a7c6dabad7605f1986ef2451431448723d8963b4457f43af646"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/references/article-digest.md",
+      "bytes": 1044,
+      "sha256": "688c186fbd16e418c413e8150f841f526db7e81ed263904c2ea8c9bec7600608"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/references/benchmark-data.json",
+      "bytes": 16135,
+      "sha256": "cb5ed545dc7eedbb81b748f8403bf51da1a0024336ba88043c0dfe248f7d092e"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/references/clause-review-checklists.md",
+      "bytes": 14968,
+      "sha256": "238d2f0b915f06b6fa2c637929ab3545feb39af6314a1fad1f169c4a445b1927"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/references/comment-only-review-mode.md",
+      "bytes": 3985,
+      "sha256": "7f31b417a7da7cb4699a4642b0d221759ed7935b2113e7cc092836125d8b20e4"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/references/connector-degradation-policy.md",
+      "bytes": 2069,
+      "sha256": "542bcc5eeec6669590cac78622677f1405448d3971f319c6b3fcd09a0e220f27"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/references/entity-and-diligence-data-layer.md",
+      "bytes": 1626,
+      "sha256": "27be0a4804d9ccbc1a969da99d8d6fe46b3db44f37c0145e334c7277298ebe7f"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/references/evaluation-protocol.md",
+      "bytes": 3069,
+      "sha256": "3e05acf9312371ed5d6f5c99b15be70796e966bbc61a7257cbb4bfc7c6e84297"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/references/intake-and-routing.md",
+      "bytes": 10051,
+      "sha256": "a0527b131c0b9374e1a77bcc9ba979a8e5edc57552f5ac4b43b9350219636737"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/references/legal-authorities.json",
+      "bytes": 39522,
+      "sha256": "456fd489aecaac54abb1330a133acfc949e0590af3228ad96e663b6d833e988a"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/references/legal-authority-protocol.md",
+      "bytes": 7096,
+      "sha256": "3259fccfb2adcc49a9b240cee097c3c78e5d26dc6b9a858e317743970d9b1146"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/references/market-benchmarks-2023-2024.md",
+      "bytes": 12813,
+      "sha256": "9d53fde255b484f12a3c1efffd9accc1ddcd949cb0da8aebf192ad130eb60be9"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/references/matter-profile-and-confidentiality.md",
+      "bytes": 1475,
+      "sha256": "5192e80897708b0d8faa6af9207065600ce2253a96570bb0e12ff7c0bd37c85d"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/references/multi-round-review.md",
+      "bytes": 6584,
+      "sha256": "f051cdd2f6b6d2b20c6215fa960b9bcba24e95b5dba592519760d5390353e3fb"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/references/negotiation-pattern-stress-tests.md",
+      "bytes": 8573,
+      "sha256": "a7055ed58384de3e4a6f392342125d882f63fee6e56b20f170a1f28f9e3fc712"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/references/offshore-structure-playbook.md",
+      "bytes": 6170,
+      "sha256": "8aeadba7a8e7641a73ccf4f4f9c52c5d6396841d1ebd4e0d8b7d026d01471c3a"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/references/output-templates.md",
+      "bytes": 5170,
+      "sha256": "575032aacd00a22f02e2295971b0ad903819c28a9eaa30693b35c3211a975878"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/references/party-side-positions.md",
+      "bytes": 5381,
+      "sha256": "35a1399c8e40ab020684ea3f675273503b34a4af53a89ea268b730bbb085e5b7"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/references/prc-law-risk-notes.md",
+      "bytes": 7989,
+      "sha256": "bc7829f8465013c0385eec270964f573612e2df6d0e6ef09a00950271036a598"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/references/recent-practice-stress-tests-2024-2026.md",
+      "bytes": 9838,
+      "sha256": "4f10f3d28ed5b27f1210b0c9b17793484cf07e26a861bccf5f3e4690c3a04079"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/references/review-quality-gates.md",
+      "bytes": 5406,
+      "sha256": "51e2ba84e5db11f2aa9ccb179041ce9f823f2e2b0d3e203681abcc4e0be57484"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/references/rmb-structure-playbook.md",
+      "bytes": 7727,
+      "sha256": "892408d52cf36f7da7ed0b913ffdcc16990953e45b8786f93152599ab249cc32"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/apply_comment_plan.py",
+      "bytes": 24120,
+      "sha256": "91e0bb28bea6fb971db9538f5ccc7e5c60b8552b8baed30f7b55eb5e9e75d8af"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/benchmark_lookup.py",
+      "bytes": 4211,
+      "sha256": "e71bbd6a6743a3a187d2eeb8c100e120794b5bc57d9e6ce6cf12d181cf035c88"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/build_document_map.py",
+      "bytes": 14198,
+      "sha256": "52185b7c62b77591631721c37afd03468517656ae4dfdba23a8375d065a7a2a9"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/build_package_matrix.py",
+      "bytes": 21964,
+      "sha256": "6b3244346f739929d9b71f7bbd40f40a9650ac29422dae7642d29cffe0a560f2"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/compare_contract_versions.py",
+      "bytes": 10206,
+      "sha256": "246457defdab04f659f5f1cefe79e632a5aaaf98eb47e0c753d8aa1738fea9ef"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/contract_clause_model.py",
+      "bytes": 16689,
+      "sha256": "2d06267d1d83787ed0fdf263292a776132e2cf5e8f53685384071a3006e3e0ee"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/contract_ontology.py",
+      "bytes": 2096,
+      "sha256": "40ff4e6b1179b74772454a121172c616c2b125dde91e84e5dc66c77f548f097e"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/extract_contract_text.py",
+      "bytes": 14672,
+      "sha256": "60e49088a7f89021f57cc4cd7ac84960b0a2e7773984938d2adcea1ccd13426b"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/legal_authority_lookup.py",
+      "bytes": 4491,
+      "sha256": "a4444eb86c0f08b66bce4dfca2d16c81b5985c8e952145b51a3cb03c68a0b48e"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/make_comment_plan.py",
+      "bytes": 3629,
+      "sha256": "35d475b4a35e59ed8b3efda14d1fbf553e7959f2c1de04b1cf1b6b4fb71a2b20"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/make_major_issue_list.py",
+      "bytes": 5731,
+      "sha256": "333578d1c3ff66576f73a545ce3cdb83970ab355012d5c29b4a183a8a5d918b7"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/ocr_pdf_macos.py",
+      "bytes": 3797,
+      "sha256": "f894c7d7fbe740da2598d210c0b5d8759ce1f2cf7ef23f72d1158801966c8e74"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/ocr_vision.swift",
+      "bytes": 1414,
+      "sha256": "934c486cc7ecaa64d4364658427f63d31cb8a8c6e5a3c52be13a62aee5f433bb"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/prepare_blind_evaluation.py",
+      "bytes": 10471,
+      "sha256": "844eaed59f28fb8a45e0add3a73732620b0a2eabcdaeac47e1be8bbe9cdfe99e"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/refresh_legal_authorities.py",
+      "bytes": 13751,
+      "sha256": "36ccb76f5be7615e1d4fea422fda018275f3a08aff87d19712a38c16c6cb1f91"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/review_schema.py",
+      "bytes": 8533,
+      "sha256": "eb95a01edfeec749ca990ca4fa98445c3816971fe321181fd357e25abe51b44d"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/score_blind_evaluation.py",
+      "bytes": 14580,
+      "sha256": "c10f707501359a8bf87dab7449a7fa8023303b7611bdc52371b1b8e9fce79f5a"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/smoke_test_transactions.py",
+      "bytes": 14425,
+      "sha256": "c068ccf385896b38edb4012adecfb5560eb32c84490cee5f98295e3ed94546e6"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/update_major_issue_list.py",
+      "bytes": 4222,
+      "sha256": "2ac9c1443f3c1b5d5965d755f5d94eaff140b2b5298fb5def2baae9b607af129"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/validate_issue_log.py",
+      "bytes": 4501,
+      "sha256": "a17eedac7c44809f341c3dd040db94da31538a4136f1237eca70272f368a8d2a"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/validate_major_issue_list.py",
+      "bytes": 2966,
+      "sha256": "dc7b151a978758d4aef121c4eefa04293d94099b66a794a3b408c72e5a0c25b2"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/validate_skill_consistency.py",
+      "bytes": 8725,
+      "sha256": "9057422cd38d2cbae5e81ec7a435916ca905cd7f3103688ad9b5da35c4f298d7"
+    },
+    {
+      "path": "tests/test_public_release.py",
+      "bytes": 8423,
+      "sha256": "d5e1eb4b8c7a767cebb8059765a2ee7765d3c29d15427730241fe2ea1a285bde"
+    }
+  ]
+}
