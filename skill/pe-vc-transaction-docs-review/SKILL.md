@@ -3,7 +3,7 @@ name: pe-vc-transaction-docs-review
 description: Review, issue-spot, comment, redline, track counterparty markups, and prepare Major Issue Lists/negotiation outputs for VC/PE investment agreement packages, including VC/PE, private equity, venture capital,投融资协议,股东协议,增资协议,增资协议补充协议,认购协议,公司章程,SPA,SHA,IRA,M&A,M&AA,MAA,term sheet,红筹架构,人民币架构,境内融资,境外美元融资,VIE,offshore financing,share subscription,shareholders agreement,memorandum and articles,investment agreement,share purchase,convertible loan,down-round,redemption,anti-dilution,liquidation preference,drag-along,ROFR,co-sale,protective provisions,investor rights,founder restrictions,registered capital contribution,注册资本缴纳,出资期限,实缴,股东失权,side letter,counterparty markup,Track Changes,major issue list,主要争议清单,or related transaction documents. Do not use for private fund formation/regulation, bankruptcy restructuring investment, standalone licensing/BD, or pure AMAC questions unless directly tied to an in-scope VC/PE agreement review.
 ---
 
-# PE/VC Transaction Docs Review
+# PE/VC私募交易文件审阅
 
 Use this skill to review VC/PE financing transaction documents from a company/founder-side or investor-side position. The core method is: identify structure first, map the document package, use market benchmark data as negotiation context, apply PRC law and dispute-risk checks where relevant, and deliver issue-log/comment/redline outputs that lawyers can use.
 

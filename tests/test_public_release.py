@@ -32,7 +32,7 @@ class PublicReleaseTests(unittest.TestCase):
     def test_identity_and_required_files(self):
         text = (SKILL / "SKILL.md").read_text(encoding="utf-8")
         self.assertTrue(text.startswith("---\nname: pe-vc-transaction-docs-review\n"))
-        self.assertIn("# PE/VC Transaction Docs Review", text)
+        self.assertIn("# PE/VC私募交易文件审阅", text)
         self.assertTrue((SKILL / "agents" / "openai.yaml").is_file())
 
     def test_every_routed_resource_exists(self):

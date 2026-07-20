@@ -1,5 +1,5 @@
 interface:
-  display_name: "PE/VC Transaction Docs Review"
+  display_name: "PE/VC私募交易文件审阅"
   short_description: "审阅 VC/PE 协议、红线稿和主要争议清单"
   default_prompt: "Use $pe-vc-transaction-docs-review to run intake on this PE/VC agreement package or markup, check version and cross-document consistency, then prepare source-disciplined native comments or a comment plan and update the Major Issue List where useful."
 policy:

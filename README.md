@@ -1,6 +1,6 @@
-# PE/VC Transaction Docs Review
+# PE/VC私募交易文件审阅
 
-`PE/VC Transaction Docs Review` is an open Skill for reviewing transaction
+`PE/VC私募交易文件审阅` is an open Skill for reviewing transaction
 documents involving investments in unlisted companies. It supports RMB and
 offshore financing structures, company/founder-side and investor-side reviews,
 first drafts and later-round markups, issue logs, clause comments, Major Issue
