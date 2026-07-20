@@ -41,6 +41,20 @@ metadata:
 - `Compare the current redline against the prior clean version and update the Major Issue List.`
 - `Review the readable files first, list every unreadable or missing document, and state what remains unverified.`
 
+### 多轮对话中的持续触发
+
+- 同一事项中，用户说“继续审”“这是下一轮”“更新问题清单”或上传新版本时，保持本 Skill 激活，沿用已确认的事项轮廓和 Issue ID，但重新核验当前文件、版本和本轮范围。
+- 用户中途改变审阅立场、交易架构、适用法律或交付模式时，重新进入相应入项门槛；先确认变更，再生成新的立场性建议，不把上一立场自动带入。
+- 用户切换到另一项目或明确说“这是新项目”时，重置事项轮廓和版本链；除非用户明确授权，不沿用上一项目的事实、文件或谈判结论。
+
+### 用户可见流程
+
+1. 上传文件并说明“审一下”、代表哪一方或想要的交付物；文件中能判断的信息无需重复填写。
+2. 只在必要时一次性回答缺失问题，例如审阅立场或哪一份是上一版。
+3. 接收按风险排序的问题、修改建议和约定的批注、修订稿或 Major Issue List；如有不可读文件或待核验事项，会同时收到明确下一步。
+
+下方16步是 Agent 的内部质量流程，不要求用户逐步操作、选择脚本或阅读全部参考文件。
+
 ### 运行条件
 
 - 日常调用无需用户安装或配置脚本；由 Agent 按需调用 Skill 内工具。

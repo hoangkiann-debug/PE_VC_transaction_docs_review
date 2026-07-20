@@ -2,7 +2,7 @@
   "repository": "PE_VC_transaction_docs_review",
   "display_name": "PE/VC私募交易文件审阅",
   "skill_id": "pe-vc-transaction-docs-review",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "distribution_profile": "public",
   "file_count": 63,
   "files": [
@@ -38,8 +38,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/SKILL.md",
-      "bytes": 16898,
-      "sha256": "0efef16397c7840446a1783227017ac53568a0d0955fe5146a084cf1b34fa388"
+      "bytes": 18105,
+      "sha256": "d5c23d433d9edb07c01d484f6ab16a729d06a81701e2216c5ec0222c4d5f9f0b"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/agents/openai.yaml",
@@ -128,8 +128,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/faq-and-troubleshooting.md",
-      "bytes": 5592,
-      "sha256": "c4b17eb1f25149cc20d491f4175170a8e0b8a4ffa564549da5e3d23744aab705"
+      "bytes": 5979,
+      "sha256": "0266dc05e5ece8fa7cf5744927f9693f9d974c6ae3bd7b44c601b0f2944f8120"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/intake-and-routing.md",
