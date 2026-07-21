@@ -4,14 +4,24 @@ description: "面向未上市公司股权融资的专业交易文件审阅能力
 license: Apache-2.0
 metadata:
   short-description: "PE/VC未上市公司股权融资文件审阅与谈判辅助"
-  maintainer: "hoangkiann-debug"
+  creator: "Gardner's Vault"
+  maintainer: "Gardner's Vault"
+  copyright-holder: "Jiang Tao"
   homepage: "https://github.com/hoangkiann-debug/PE_VC_transaction_docs_review"
   support: "https://github.com/hoangkiann-debug/PE_VC_transaction_docs_review/issues"
+  wechat-public-account: "加德纳的宝匣"
   last-reviewed: "2026-07-22"
   languages: "zh-CN, en"
 ---
 
 # PE/VC私募交易文件审阅
+
+## 创建与维护
+
+- 创建者及官方维护者：Gardner's Vault
+- 版权主体：Jiang Tao
+- 官方仓库及问题反馈：https://github.com/hoangkiann-debug/PE_VC_transaction_docs_review
+- 公众号：加德纳的宝匣
 
 ## 核心定位
 

@@ -2,14 +2,35 @@
   "repository": "PE_VC_transaction_docs_review",
   "display_name": "PE/VC私募交易文件审阅",
   "skill_id": "pe-vc-transaction-docs-review",
-  "version": "0.1.10",
+  "version": "0.1.11",
+  "release_date": "2026-07-22",
+  "official_publisher": "Gardner's Vault",
+  "copyright_holder": "Jiang Tao",
+  "official_repository": "https://github.com/hoangkiann-debug/PE_VC_transaction_docs_review",
+  "support": "https://github.com/hoangkiann-debug/PE_VC_transaction_docs_review/issues",
+  "wechat_public_account": "加德纳的宝匣",
   "distribution_profile": "public",
-  "file_count": 66,
+  "file_count": 72,
   "files": [
     {
       "path": ".gitignore",
       "bytes": 67,
       "sha256": "6a34935c87db8133dad26005b130c50bf486023f626c5ddd5b825e7e1f1693cd"
+    },
+    {
+      "path": "AUTHORS.md",
+      "bytes": 497,
+      "sha256": "1a4d2cd32eb345956596971cd26e796412d3603c85787ec705af8be5f96c3376"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 693,
+      "sha256": "30591823de65bc13d28f8d5e520227409a056f072f0a920afa2ebaa8db9129cd"
+    },
+    {
+      "path": "CITATION.cff",
+      "bytes": 544,
+      "sha256": "6d93131b5771411426f4364bbbe39713912af38160c8fd3ed68e0a7cbb9b4184"
     },
     {
       "path": "DISCLAIMER.md",
@@ -18,8 +39,23 @@
     },
     {
       "path": "LICENSE",
-      "bytes": 11372,
-      "sha256": "6ccfccb33c5eec6436a2b294deca60dac0528481f763e48c6b14cf574ad54bb3"
+      "bytes": 11339,
+      "sha256": "a740bc81d88c4e983481688e0e38d701f912a66232ac7029375379e35d5bcf54"
+    },
+    {
+      "path": "MAINTENANCE.md",
+      "bytes": 898,
+      "sha256": "ba353093308604bc655ac48bf07c3beb713879e5f76908285e1922a5fee2a268"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 321,
+      "sha256": "099314ca803139c1c330f6d65581769606b86d270bbd2f39d1e6420e6faa7c32"
+    },
+    {
+      "path": "OFFICIAL.md",
+      "bytes": 631,
+      "sha256": "fb7eb2c25d0e13df5af288a02ee7700f16a22c7b186b7ae27c49e6aeaa71d03f"
     },
     {
       "path": "PRIVACY.md",
@@ -28,8 +64,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3823,
-      "sha256": "ddbff5290e6472065e4a6fb01436310826f9b34757ba475819084d2744c2169b"
+      "bytes": 5192,
+      "sha256": "f3d8d756101a36223cb2c5e392dfa4508b15336521b2af536a3e8d097cd376db"
     },
     {
       "path": "SECURITY.md",
@@ -38,8 +74,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/SKILL.md",
-      "bytes": 26634,
-      "sha256": "da9fdc797151cef3799263e4467c398adf1d64358ddb76d67cd30476160e0ca4"
+      "bytes": 26967,
+      "sha256": "7ffe1f48e33408eae05fa4a5a7cf0d38f5f5d2893d0c5539c998b0ff5fc0f2a9"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/agents/openai.yaml",
@@ -333,8 +369,8 @@
     },
     {
       "path": "tests/test_public_release.py",
-      "bytes": 12251,
-      "sha256": "21dc9dccaba2453eb19d716f635276fc49b437caa85fc24fd6f1d9cd255d3907"
+      "bytes": 12931,
+      "sha256": "d81453f18d40f8a9b30ff421ff06956bf0c4e1b96feadfb46a282ab80f664705"
     }
   ]
 }

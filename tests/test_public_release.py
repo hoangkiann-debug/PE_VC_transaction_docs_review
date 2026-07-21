@@ -33,6 +33,10 @@ class PublicReleaseTests(unittest.TestCase):
         text = (SKILL / "SKILL.md").read_text(encoding="utf-8")
         self.assertTrue(text.startswith("---\nname: pe-vc-transaction-docs-review\n"))
         self.assertIn("# PE/VC私募交易文件审阅", text)
+        self.assertIn("creator: \"Gardner's Vault\"", text)
+        self.assertIn("maintainer: \"Gardner's Vault\"", text)
+        self.assertIn('copyright-holder: "Jiang Tao"', text)
+        self.assertIn("公众号：加德纳的宝匣", text)
         self.assertIn("## 典型使用案例", text)
         self.assertIn("## 常见问题", text)
         self.assertIn("## 常见错误用法与正确处理", text)
@@ -56,6 +60,11 @@ class PublicReleaseTests(unittest.TestCase):
             "Data Completeness Gate",
             (SKILL / "references" / "market-benchmarks-2024-2025.md").read_text(encoding="utf-8"),
         )
+        for name in ("NOTICE", "AUTHORS.md", "CITATION.cff", "MAINTENANCE.md", "OFFICIAL.md", "CHANGELOG.md"):
+            self.assertTrue((ROOT / name).is_file(), name)
+        self.assertIn("Gardner's Vault", (ROOT / "NOTICE").read_text(encoding="utf-8"))
+        self.assertIn("Jiang Tao", (ROOT / "NOTICE").read_text(encoding="utf-8"))
+        self.assertIn("Gardner's Vault", (ROOT / "CITATION.cff").read_text(encoding="utf-8"))
 
     def test_outward_documentation_copy(self):
         forbidden = [

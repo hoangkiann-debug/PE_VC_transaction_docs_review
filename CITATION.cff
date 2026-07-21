@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "使用本项目时，请引用 Gardner's Vault 维护的官方版本。"
+title: "PE/VC私募交易文件审阅"
+type: software
+authors:
+  - name: "Gardner's Vault"
+version: "0.1.11"
+date-released: "2026-07-22"
+url: "https://github.com/hoangkiann-debug/PE_VC_transaction_docs_review"
+repository-code: "https://github.com/hoangkiann-debug/PE_VC_transaction_docs_review"
+license: Apache-2.0
+abstract: "面向未上市公司境内人民币及境外美元股权融资交易文件的专业审阅与谈判辅助 Skill。"
