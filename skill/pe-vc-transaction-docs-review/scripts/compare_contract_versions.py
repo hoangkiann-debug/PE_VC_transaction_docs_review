@@ -187,10 +187,10 @@ def as_markdown(result: dict) -> str:
     ])
     for change in result.get("clause_changes", []):
         prior = "<br>".join(
-            f"{label} [{location}]" for label, location in zip(change["prior_labels"], change["prior_locations"], strict=True)
+            f"{label} [{location}]" for label, location in zip(change["prior_labels"], change["prior_locations"])
         ) or "-"
         current = "<br>".join(
-            f"{label} [{location}]" for label, location in zip(change["current_labels"], change["current_locations"], strict=True)
+            f"{label} [{location}]" for label, location in zip(change["current_labels"], change["current_locations"])
         ) or "-"
         lines.append(
             f"| {md_escape(change['type'])} | {md_escape(change['confidence'])} | {md_escape(prior)} | {md_escape(current)} |"

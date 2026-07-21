@@ -233,4 +233,6 @@ def canonical_major_row(row: Mapping[object, object]) -> dict[str, str]:
 
 
 def localized_major_row(row: Mapping[str, str], language: str) -> dict[str, str]:
-    return {header: row.get(key, "") for key, header in zip(MAJOR_KEYS, MAJOR_HEADERS[language], strict=True)}
+    if len(MAJOR_KEYS) != len(MAJOR_HEADERS[language]):
+        raise ValueError("Major Issue List schema keys and headers must have equal lengths")
+    return {header: row.get(key, "") for key, header in zip(MAJOR_KEYS, MAJOR_HEADERS[language])}

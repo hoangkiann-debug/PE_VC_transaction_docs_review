@@ -1,13 +1,13 @@
 ---
 name: pe-vc-transaction-docs-review
-description: "面向未上市公司股权融资的专业交易文件审阅能力。适用于境内人民币架构及红筹/VIE 美元架构（尽管当前使用比例有所下降）；支持公司/创始人方、投资人、领投/跟投及战略投资人等不同立场；可审阅首轮整套文件初稿，跟踪后续多轮红线版本，并核验跨文件之间的冲突；可输出完整的修改意见与建议、修订后版本、主要问题清单以及 main control list 等；突出优势是结合大量同类市场项目的统计数据，对于同一核心条款，不仅可提示市场主流做法与写法，还能提供不同做法的大致市场采用比例，并进一步给出相应的谈判建议。适用于增资协议、认购协议、股东协议、公司章程、SPA、SHA、IRA、M&A/M&AA、term sheet、side letter及Track Changes。基金设立备案、纯AMAC事项、破产重整投资、单独许可/BD合同及已上市公司证券争议不属于主要适用范围，除非与本次未上市公司投融资协议审阅直接相关。"
+description: "面向未上市公司股权融资的专业交易文件审阅能力。适用于境内人民币架构及红筹/VIE 美元架构（尽管当前使用比例有所下降）；支持公司/创始人方、投资人、领投/跟投及战略投资人等不同立场；可审阅首轮整套文件初稿，跟踪后续多轮红线版本，并核验跨文件之间的冲突；可输出完整的修改意见与建议、修订后版本、问题清单以及 Major Issue List（重大问题清单）等；突出优势是结合大量同类市场项目的统计数据，对于同一核心条款，不仅可提示市场主流做法与写法，还能提供不同做法的大致市场采用比例，并进一步给出相应的谈判建议。适用于增资协议、认购协议、股东协议、公司章程、SPA、SHA、IRA、M&A/M&AA、term sheet、side letter及Track Changes。基金设立备案、纯AMAC事项、破产重整投资、单独许可/BD合同及已上市公司证券争议不属于主要适用范围，除非与本次未上市公司投融资协议审阅直接相关。"
 license: Apache-2.0
 metadata:
   short-description: "PE/VC未上市公司股权融资文件审阅与谈判辅助"
   maintainer: "hoangkiann-debug"
   homepage: "https://github.com/hoangkiann-debug/PE_VC_transaction_docs_review"
   support: "https://github.com/hoangkiann-debug/PE_VC_transaction_docs_review/issues"
-  last-reviewed: "2026-07-21"
+  last-reviewed: "2026-07-22"
   languages: "zh-CN, en"
 ---
 
@@ -20,10 +20,10 @@ metadata:
 - 适用于境内人民币架构及红筹/VIE 美元架构（尽管当前使用比例有所下降）；
 - 支持公司/创始人方、投资人、领投/跟投及战略投资人等不同立场；
 - 可审阅首轮整套文件初稿，跟踪后续多轮红线版本，并核验跨文件之间的冲突；
-- 可输出完整的修改意见与建议、修订后版本、主要问题清单以及 main control list 等；
+- 可输出完整的修改意见与建议、修订后版本、问题清单以及 Major Issue List（重大问题清单）等；
 - 相较一般能力的突出优势在于：结合大量同类市场项目的统计数据，对于同一核心条款，不仅可提示市场主流做法与写法，还能提供不同做法的大致市场采用比例，并进一步给出相应的谈判建议。
 
-市场比例只作为谈判背景，不是法律要求。法律效力、可执行性及监管问题必须另行核验现行一手法律依据。
+市场比例只作为谈判背景，不是法律要求。内部数据保留精确值用于计算和核验；用户可见输出默认四舍五入到整数百分比，并使用“约”“大约”或“不足1%”，不展示无必要的小数位。只有用户明确要求精确口径时，才提供精确值并同时说明样本期间和统计边界。法律效力、可执行性及监管问题必须另行核验现行一手法律依据。
 
 ## 快速开始
 
@@ -47,6 +47,13 @@ metadata:
 - 用户中途改变审阅立场、交易架构、适用法律或交付模式时，重新进入相应入项门槛；先确认变更，再生成新的立场性建议，不把上一立场自动带入。
 - 用户切换到另一项目或明确说“这是新项目”时，重置事项轮廓和版本链；除非用户明确授权，不沿用上一项目的事实、文件或谈判结论。
 
+### 个性化审阅偏好
+
+- 本 Skill 可以按用户自己的职业经验和条款尺度定制，但不会在用户不知情时自动把单个项目的处理结果变成永久规则。
+- 用户可以直接说明长期偏好，也可以复制并填写 `assets/review-preferences-template.md`，在每次审阅时与交易文件一并提供；可编辑的本地或 GitHub 版本也可将其作为固定偏好文件维护。
+- 适用优先级为：本次明确指令和当前项目事实 > 用户偏好表 > 本 Skill 的默认立场与市场参考。偏好不能覆盖现行法律核验、文件事实或明确的风险披露要求。
+- 只有用户明确确认“以后都按这个标准”时，才把本次形成的新尺度写回长期偏好表；项目特有的估值、金额、对方名称、特殊让步和保密信息不得自动写入长期偏好。
+
 ### 用户可见流程
 
 1. 上传文件并说明“审一下”、代表哪一方或想要的交付物；文件中能判断的信息无需重复填写。
@@ -61,6 +68,7 @@ metadata:
 - 文本、可搜索PDF和Word文件可直接处理；扫描PDF的OCR为可选能力，工具不可用时按 `references/faq-and-troubleshooting.md` 降级。
 - 核心文件审阅、市场数据查询和一致性检查均可在本地完成，不依赖境外API；外部法律或企业信息连接器仅为可选核验能力，不影响现有文件的基础审阅。
 - 运行前可由 Agent 执行 `python3 scripts/runtime_self_check.py --format json`；核心能力未就绪时使用 `RUNTIME-001`，可选能力缺失时按功能降级，不把整项工作误判为失败。
+- Word原生批注依赖缺失时，不自行联网安装软件；继续生成完整批注计划，并明确说明本轮未生成原生批注文件。只有用户明确授权安装依赖后，才尝试补齐该能力。
 
 ### 首轮整套文件审阅
 
@@ -121,7 +129,7 @@ metadata:
 - 只有出现相应问题时才读取OCR、连接器、VIE、红线跟踪或完整交付样例；单文件、单条款任务不加载无关模块。
 - 每一步只保留与当前文件、当前条款和当前轮次有关的结果，避免不同项目或不同版本相互污染。
 
-1. 读取 `references/review-quality-gates.md`、`references/intake-and-routing.md` 和 `references/matter-profile-and-confidentiality.md`，先完成事项识别和必要信息门槛。
+1. 读取 `references/review-quality-gates.md`、`references/intake-and-routing.md` 和 `references/matter-profile-and-confidentiality.md`，先完成事项识别和必要信息门槛；如用户提供审阅偏好表，再读取并按上述优先级应用。
 2. 使用 `scripts/build_document_map.py` 建立整套文件地图。文件名只能作为文种、语言、架构和版本的初步线索，最终以正文为准。
 3. 使用 `scripts/extract_contract_text.py` 提取全部范围内文件。提取为空或失败时，视情况使用 `scripts/ocr_pdf_macos.py`；仍不可读的文件必须标记为未实质审阅，并按 `references/faq-and-troubleshooting.md` 告知用户可执行的下一步。
 4. 多文件项目使用 `scripts/build_package_matrix.py` 检查定义、金额、股权比例、权利安排和争议解决的候选冲突，再回到协议正文确认。
@@ -131,11 +139,11 @@ metadata:
 8. 外部连接器可能参与时，读取 `references/connector-degradation-policy.md`；目标主体事实影响审阅时，读取 `references/entity-and-diligence-data-layer.md`。准确区分已连接、已配置但未验证和不可用。
 9. 按架构读取：人民币境内使用 `references/rmb-structure-playbook.md`；境外美元直持/VIE使用 `references/offshore-structure-playbook.md`。
 10. 对照 `references/clause-review-checklists.md`、`references/recent-practice-stress-tests-2024-2026.md` 和 `references/negotiation-pattern-stress-tests.md`，把每个相关条款族标记为已审、无关、缺文件或暂缓。
-11. 使用 `references/market-benchmarks-2023-2024.md`、`references/benchmark-data.json` 或 `scripts/benchmark_lookup.py` 查询市场背景。2025数据为主要锚点；2024与2025口径可比时使用两年平均；不可比时仅用2025并在内部记录。
+11. 使用 `references/market-benchmarks-2023-2024.md`、`references/benchmark-data.json` 或 `scripts/benchmark_lookup.py` 查询市场背景。2025数据为主要锚点；2024与2025口径可比时使用两年平均；不可比时仅用2025并在内部记录。对外呈现按整数百分比概述，精确值只用于内部计算和核验。
 12. 法律效力或可执行性问题读取 `references/legal-authority-protocol.md`、`references/legal-authorities.json`、`references/prc-law-risk-notes.md` 和 `references/article-digest.md`，并用 `scripts/legal_authority_lookup.py` 核验效力层级、状态、定位和日期。二手文章不是一手法律依据。
 13. 按用户立场使用 `references/party-side-positions.md`。
 14. 按 `references/output-templates.md` 和 `references/comment-only-review-mode.md` 交付；需要查看成品形态时读取 `references/complete-output-example.md`。Word批注必须锚定当前可见正文中的唯一原文片段，并另存输出文件，不覆盖源文件。
-15. 首轮重大问题生成 Major Issue List；后续轮次使用 `scripts/update_major_issue_list.py` 保持 Issue ID 稳定并更新状态。
+15. 首轮重大问题生成 Major Issue List；后续轮次使用 `scripts/update_major_issue_list.py` 保持 Issue ID 稳定并更新状态。状态必须遵循用户指定口径；对方在收到我方立场后返还的版本中明确保留争议文本时，标记为 Rejected，而不是 Open。
 16. 交付前使用 `scripts/validate_issue_log.py`、`scripts/validate_major_issue_list.py` 和 `scripts/validate_skill_consistency.py` 完成适用的质量检查。
 
 
@@ -188,6 +196,10 @@ metadata:
 ### 6. 香港、开曼或美国法条款能给最终结论吗？
 
 不能替代相应法域执业律师的专业判断。统一提示为：涉及中国法律相关事项，请咨询执业中国律师；涉及非中国法管辖事项，请咨询相应法域的执业律师。
+
+### 7. 能否按照我自己的审阅习惯长期使用？
+
+可以。把常用立场、条款底线、可接受的 Fallback、风险偏好和输出习惯填写到 `assets/review-preferences-template.md`，每次审阅时一并提供，或在自己的本地/GitHub版本中长期维护。Skill 不会自动记住每次项目结果；只有经你明确确认的通用经验才应写回偏好表。
 
 更多高频问题、问题编号和逐步修复方法见 `references/faq-and-troubleshooting.md`。
 

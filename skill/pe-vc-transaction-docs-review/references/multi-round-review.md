@@ -69,6 +69,15 @@ issue, not merely whether the text changed. Preserve the same Issue ID and merge
 approved updates with `scripts/update_major_issue_list.py`; never regenerate the
 whole list if doing so would renumber existing issues.
 
+Apply the following status rules consistently:
+
+- Follow any status taxonomy or classification rule expressly requested by the user.
+- Use `Rejected` when the counterparty expressly rejects our position or returns a later draft that deliberately keeps the disputed text after receiving our prior comment or proposal.
+- Use `Open` only when no reliable counterparty response is available, the relevant document has not yet been returned, or the issue remains pending without a basis to infer acceptance or rejection.
+- Use `Partially Accepted` when the counterparty adopts only part of the requested protection and a material residual issue remains.
+- Use `Reopened` when an issue previously accepted or closed returns in a later draft or connected document.
+- Do not label an unchanged clause `Rejected` merely because no text changed if the baseline does not show that the counterparty had received our position.
+
 ## First-Draft Output
 
 When preparing a first-draft review:

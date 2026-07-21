@@ -141,6 +141,7 @@ visual differences and any rendering limitation.
 - If a full clause cannot be drafted without business input, draft a complete clause with bracketed variables and list the variables.
 - Do not merely say "revise to be more reasonable."
 - Do not name any underlying benchmark source in user-facing output.
+- Keep exact benchmark values for internal calculation and verification. In user-facing reports, comments, tables, and Major Issue Lists, round percentages to the nearest whole number and use "about" / “约” / “大约”; use “不足1%” for positive values below 1%. Provide decimals only if the user expressly asks for the exact statistical basis, and then state the period and scope.
 - Keep Major Issue List rows stable across rounds; update status instead of creating a new row for the same disputed point.
 - Treat `build_package_matrix.py` output as candidate conflicts for lawyer
   resolution, not as self-proving legal conclusions.

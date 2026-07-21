@@ -2,9 +2,9 @@
   "repository": "PE_VC_transaction_docs_review",
   "display_name": "PE/VC私募交易文件审阅",
   "skill_id": "pe-vc-transaction-docs-review",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "distribution_profile": "public",
-  "file_count": 63,
+  "file_count": 64,
   "files": [
     {
       "path": ".gitignore",
@@ -28,8 +28,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3328,
-      "sha256": "50b364c683b6e95a6d3d4d81842f5753d36cf0d67cd1260f9d34284c213d2299"
+      "bytes": 3823,
+      "sha256": "ddbff5290e6472065e4a6fb01436310826f9b34757ba475819084d2744c2169b"
     },
     {
       "path": "SECURITY.md",
@@ -38,8 +38,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/SKILL.md",
-      "bytes": 18105,
-      "sha256": "d5c23d433d9edb07c01d484f6ab16a729d06a81701e2216c5ec0222c4d5f9f0b"
+      "bytes": 20219,
+      "sha256": "126597a4e49bcac37855957b6946b3ed903476977402d1ecf409f6d768d9a75f"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/agents/openai.yaml",
@@ -85,6 +85,11 @@
       "path": "skill/pe-vc-transaction-docs-review/assets/matter-profile-template.md",
       "bytes": 625,
       "sha256": "7490a82875034a7c6dabad7605f1986ef2451431448723d8963b4457f43af646"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/assets/review-preferences-template.md",
+      "bytes": 1556,
+      "sha256": "9da12aa6d6f0768e0a3523b80a29fab9f912c28ca55d864252e1d5fa76dbc131"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/article-digest.md",
@@ -158,8 +163,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/multi-round-review.md",
-      "bytes": 6584,
-      "sha256": "f051cdd2f6b6d2b20c6215fa960b9bcba24e95b5dba592519760d5390353e3fb"
+      "bytes": 7499,
+      "sha256": "b921e286a96e1a2154b38361a78c80f74738e1c9bd16f531e46844146f5c2e28"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/negotiation-pattern-stress-tests.md",
@@ -173,8 +178,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/output-templates.md",
-      "bytes": 5328,
-      "sha256": "fe6cfcdb81acc1b97d719a3fb4a13509c3f4287412869bea23e0e947effbae76"
+      "bytes": 5724,
+      "sha256": "a750714674419508e6a3142920f553a9a1f55a46658ed238b4afa9fa29d21e99"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/party-side-positions.md",
@@ -208,8 +213,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/scripts/benchmark_lookup.py",
-      "bytes": 4211,
-      "sha256": "e71bbd6a6743a3a187d2eeb8c100e120794b5bc57d9e6ce6cf12d181cf035c88"
+      "bytes": 4993,
+      "sha256": "93dfc6f50ff5136da4224ef1511e5f039d186f9f08ed8627413f158ea20217c2"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/scripts/build_document_map.py",
@@ -223,13 +228,13 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/scripts/compare_contract_versions.py",
-      "bytes": 10206,
-      "sha256": "246457defdab04f659f5f1cefe79e632a5aaaf98eb47e0c753d8aa1738fea9ef"
+      "bytes": 10180,
+      "sha256": "a96347db1b26d84c987546b105f1a369c648b39e0219b78fc7a441953eac4cb4"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/scripts/contract_clause_model.py",
-      "bytes": 16689,
-      "sha256": "2d06267d1d83787ed0fdf263292a776132e2cf5e8f53685384071a3006e3e0ee"
+      "bytes": 16825,
+      "sha256": "34f67a165d9e2973b2fca8ab5dcc43d38968c3d415c10f00604ae646ae2c74cf"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/scripts/contract_ontology.py",
@@ -278,8 +283,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/scripts/review_schema.py",
-      "bytes": 8533,
-      "sha256": "eb95a01edfeec749ca990ca4fa98445c3816971fe321181fd357e25abe51b44d"
+      "bytes": 8669,
+      "sha256": "9e99e6b9029a138c68952640ed24ecd3f3b4123abe0f23cbd67d94eb10e6d732"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/scripts/runtime_self_check.py",
@@ -318,8 +323,8 @@
     },
     {
       "path": "tests/test_public_release.py",
-      "bytes": 9426,
-      "sha256": "cfd6903c3700ea5c1d5bfa647394f4313539b27f1a8b9b9030a7d1adb2ec993d"
+      "bytes": 9787,
+      "sha256": "450f6d7b1e8d197605774cda25d4d1158b1d6d1ae8e343bc2dfd76e940b16996"
     }
   ]
 }

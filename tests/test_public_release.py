@@ -40,6 +40,7 @@ class PublicReleaseTests(unittest.TestCase):
         self.assertIn("references/faq-and-troubleshooting.md", text)
         self.assertIn("license: Apache-2.0", text)
         self.assertTrue((SKILL / "agents" / "openai.yaml").is_file())
+        self.assertTrue((SKILL / "assets" / "review-preferences-template.md").is_file())
 
     def test_outward_documentation_copy(self):
         forbidden = [
@@ -75,6 +76,9 @@ class PublicReleaseTests(unittest.TestCase):
         payload = json.loads(completed.stdout)
         self.assertGreater(len(payload["matches"]), 0)
         self.assertNotIn("source_registry", payload)
+        rendered = " ".join(item["benchmark"] for item in payload["matches"])
+        self.assertNotRegex(rendered, r"\d+\.\d+%")
+        self.assertIn("about", rendered)
 
     def test_core_routing_and_ontology(self):
         document_map = load_module("build_document_map")
@@ -125,6 +129,7 @@ class PublicReleaseTests(unittest.TestCase):
             self.assertGreater(delta["change_block_count"], 0)
             self.assertGreater(delta["clause_change_count"], 0)
 
+    @unittest.skipUnless(importlib.util.find_spec("lxml"), "lxml optional dependency not installed")
     def test_native_word_comment_apply_and_rollback(self):
         comments = load_module("apply_comment_plan")
         schema = load_module("review_schema")

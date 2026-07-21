@@ -390,9 +390,11 @@ def align_clauses(
         elif method == "merged":
             change_type = "merged"
         else:
+            if len(prior_group) != len(current_group):
+                raise ValueError("non-split clause alignment groups must have equal lengths")
             same_text = all(
                 left["normalized_semantic_text"] == right["normalized_semantic_text"]
-                for left, right in zip(prior_group, current_group, strict=True)
+                for left, right in zip(prior_group, current_group)
             )
             same_label = [item["normalized_label"] for item in prior_group] == [
                 item["normalized_label"] for item in current_group
