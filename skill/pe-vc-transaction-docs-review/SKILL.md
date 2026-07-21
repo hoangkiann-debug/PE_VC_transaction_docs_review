@@ -25,6 +25,16 @@ metadata:
 
 市场比例只作为谈判背景，不是法律要求。内部数据保留精确值用于计算和核验；用户可见输出默认四舍五入到整数百分比，并使用“约”“大约”或“不足1%”，不展示无必要的小数位。只有用户明确要求精确口径时，才提供精确值并同时说明样本期间和统计边界。法律效力、可执行性及监管问题必须另行核验现行一手法律依据。
 
+### 与通用合同审阅的区别
+
+本 Skill 的差异不在于多列几类风险，而在于形成五个相互校验的闭环：
+
+1. **条款审阅闭环**：从风险定位直接走到可粘贴的完整修改条款、强弱替代方案和 Fallback，不停在原则性提醒。
+2. **市场谈判闭环**：把核心条款的历史采用方向和整数概数转化为谈判位置、让步顺序和可接受区间，同时与法律结论严格分开。
+3. **整套文件闭环**：同时检查主协议、股东协议、章程和配套文件中的定义、金额、股权、权利及争议解决冲突，而不是逐份孤立审阅。
+4. **多轮谈判闭环**：用稳定 Issue ID 追踪已接受、部分接受、已拒绝、重新开启和新增问题，不因版本变化丢失谈判历史。
+5. **个性化但不污染闭环**：允许用户固化长期偏好，但项目事实、特殊让步和保密信息不会自动变成下一项目的规则。
+
 ## 快速开始
 
 用户无需配置或逐个运行本 Skill 的脚本。先读取用户指令和文件包，只询问文件中无法判断的必要信息。
@@ -100,6 +110,8 @@ metadata:
 - 核心文件审阅、市场数据查询和一致性检查均可在本地完成，不依赖境外API；外部法律或企业信息连接器仅为可选核验能力，不影响现有文件的基础审阅。
 - 运行前可由 Agent 执行 `python3 scripts/runtime_self_check.py --format json`；核心能力未就绪时使用 `RUNTIME-001`，可选能力缺失时按功能降级，不把整项工作误判为失败。
 - Word原生批注依赖缺失时，不自行联网安装软件；继续生成完整批注计划，并明确说明本轮未生成原生批注文件。只有用户明确授权安装依赖后，才尝试补齐该能力。
+- 脚本是确定性加速与校验工具，不是完成核心审阅的前提。脚本不可用时，Agent 仍须直接阅读可见正文，按条款清单人工建立文件地图、问题清单、重大问题清单、市场背景和修改建议；仅暂停必须依赖工具的OCR、Word原生批注或大规模自动比对，并清楚说明限制。
+- 所有可控的外部只读请求统一以30秒为单次上限、最多自动重试2次；权限、登录、验证码、付费或参数错误不重试。超时后立即转为本地审阅，不阻塞整项工作。
 
 ### 首轮整套文件审阅
 
@@ -180,7 +192,7 @@ metadata:
 8. 外部连接器可能参与时，读取 `references/connector-degradation-policy.md`；目标主体事实影响审阅时，读取 `references/entity-and-diligence-data-layer.md`。准确区分已连接、已配置但未验证和不可用。
 9. 按架构读取：人民币境内使用 `references/rmb-structure-playbook.md`；境外美元直持/VIE使用 `references/offshore-structure-playbook.md`。
 10. 对照 `references/clause-review-checklists.md`、`references/recent-practice-stress-tests-2024-2026.md` 和 `references/negotiation-pattern-stress-tests.md`，把每个相关条款族标记为已审、无关、缺文件或暂缓。
-11. 使用 `references/market-benchmarks-2024-2025.md`、`references/benchmark-data.json` 或 `scripts/benchmark_lookup.py` 查询市场背景。2025数据为主要锚点；2024与2025口径可比时使用两年平均；不可比时仅用2025并在内部记录。对外呈现按整数百分比概述，精确值只用于内部计算和核验。
+11. 使用 `references/market-benchmarks-2024-2025.md`、`references/benchmark-data.json` 或 `scripts/benchmark_lookup.py` 查询市场背景。结构化数据固定包含23个唯一主题；交付前由 `scripts/validate_skill_consistency.py` 检查JSON可解析、主题无缺失/重复、必需字段完整。2025数据为主要锚点；2024与2025口径可比时使用两年平均；不可比时仅用2025并在内部记录。对外呈现按整数百分比概述，精确值只用于内部计算和核验。
 12. 法律效力或可执行性问题读取 `references/legal-authority-protocol.md`、`references/legal-authorities.json`、`references/prc-law-risk-notes.md` 和 `references/article-digest.md`，并用 `scripts/legal_authority_lookup.py` 核验效力层级、状态、定位和日期。二手文章不是一手法律依据。
 13. 按用户立场使用 `references/party-side-positions.md`。
 14. 按 `references/output-templates.md` 和 `references/comment-only-review-mode.md` 交付；需要查看成品形态时读取 `references/complete-output-example.md`。Word批注必须锚定当前可见正文中的唯一原文片段，并另存输出文件，不覆盖源文件。

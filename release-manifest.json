@@ -2,7 +2,7 @@
   "repository": "PE_VC_transaction_docs_review",
   "display_name": "PE/VC私募交易文件审阅",
   "skill_id": "pe-vc-transaction-docs-review",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "distribution_profile": "public",
   "file_count": 66,
   "files": [
@@ -38,8 +38,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/SKILL.md",
-      "bytes": 24941,
-      "sha256": "14cd0ea47e7e6756e237a451085582610dbd43eca3e480678a0c1df7214b7d08"
+      "bytes": 26634,
+      "sha256": "da9fdc797151cef3799263e4467c398adf1d64358ddb76d67cd30476160e0ca4"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/agents/openai.yaml",
@@ -133,8 +133,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/faq-and-troubleshooting.md",
-      "bytes": 8395,
-      "sha256": "bff988bb6f3237a317d40276cebe094e322b7f11a1c73234b3a0f45eaf4bec52"
+      "bytes": 9288,
+      "sha256": "bda2b4f53a5b56ef5f0af1d456f953f9a7391a355caadd13cf2603096b9a3a12"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/intake-and-routing.md",
@@ -153,8 +153,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/market-benchmarks-2024-2025.md",
-      "bytes": 12777,
-      "sha256": "699cde98c5863eb49c90e1ab9cd9909281f5288aeca8902e83dead42da77a3f1"
+      "bytes": 13268,
+      "sha256": "5cab465665a7aa4da35f13cb8f6446188783657c29cf54ddb75cd4a334123d5c"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/matter-profile-and-confidentiality.md",
@@ -328,13 +328,13 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/scripts/validate_skill_consistency.py",
-      "bytes": 8967,
-      "sha256": "724b5209216333ee796556a0594afbc62c5d9026e2bd57f2b90344f2bf9923b2"
+      "bytes": 10632,
+      "sha256": "6bd92d47f34d6ee0e4f6a5edee7b0127d007c7a726c5af5bf8ba4f1b1cd2b76a"
     },
     {
       "path": "tests/test_public_release.py",
-      "bytes": 11766,
-      "sha256": "8d09bdeda7d1fa0961bb7782b5ee0957bb490cf350fb1b888124c35ced523d1c"
+      "bytes": 12251,
+      "sha256": "21dc9dccaba2453eb19d716f635276fc49b437caa85fc24fd6f1d9cd255d3907"
     }
   ]
 }

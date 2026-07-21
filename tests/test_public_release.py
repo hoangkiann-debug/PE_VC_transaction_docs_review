@@ -38,6 +38,7 @@ class PublicReleaseTests(unittest.TestCase):
         self.assertIn("## 常见错误用法与正确处理", text)
         self.assertIn("### 默认低门槛模式", text)
         self.assertIn("### 普通用户直接照抄", text)
+        self.assertIn("### 与通用合同审阅的区别", text)
         self.assertIn("### 触发优先级", text)
         self.assertIn("### 参考资料三层导航", text)
         self.assertIn("references/complete-output-example.md", text)
@@ -47,6 +48,14 @@ class PublicReleaseTests(unittest.TestCase):
         self.assertTrue((SKILL / "assets" / "review-preferences-template.md").is_file())
         self.assertTrue((SCRIPTS / "review_checkpoint.py").is_file())
         self.assertTrue((SCRIPTS / "ocr_pdf.py").is_file())
+        self.assertIn(
+            "用户实际看到的白话提示",
+            (SKILL / "references" / "faq-and-troubleshooting.md").read_text(encoding="utf-8"),
+        )
+        self.assertIn(
+            "Data Completeness Gate",
+            (SKILL / "references" / "market-benchmarks-2024-2025.md").read_text(encoding="utf-8"),
+        )
 
     def test_outward_documentation_copy(self):
         forbidden = [
@@ -99,6 +108,7 @@ class PublicReleaseTests(unittest.TestCase):
             text=True, capture_output=True, check=False,
         )
         self.assertEqual(completed.returncode, 0, completed.stderr)
+        self.assertIn("23 complete benchmark topics", completed.stdout)
         completed = subprocess.run(
             [sys.executable, str(SCRIPTS / "legal_authority_lookup.py"), "公司法", "--json", "--check-freshness"],
             text=True, capture_output=True, check=False,

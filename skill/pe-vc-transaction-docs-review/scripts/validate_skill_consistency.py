@@ -19,6 +19,14 @@ from review_schema import COMMENT_HEADERS, ISSUE_HEADERS, MAJOR_HEADERS
 ROOT = Path(__file__).resolve().parents[1]
 RESOURCE_LINK = re.compile(r"(?<![A-Za-z0-9_.-])((?:references|scripts|assets)/[A-Za-z0-9_./&:-]+(?:\.md|\.json|\.py|\.swift|\.csv))")
 USER_ABSOLUTE_PATH = re.compile("/" + "Users/" + r"[^/\s]+/")
+EXPECTED_BENCHMARK_IDS = {
+    "transaction_structure", "preemptive_right", "rofr", "co_sale", "redemption",
+    "redemption_obligors", "redemption_price", "anti_dilution", "drag_along",
+    "preferred_dividend", "protective_provisions", "board_seat", "esop",
+    "liquidation_preference", "founder_restrictions", "founder_secondary_sale",
+    "information_rights", "rw_survival", "indemnity", "investor_transfer_restrictions",
+    "mfn", "registered_capital_contribution", "governing_law_dispute",
+}
 
 
 def load_json(path: Path, errors: list[str]) -> dict:
@@ -165,6 +173,21 @@ def main() -> int:
 
     benchmark_data = load_json(ROOT / "references" / "benchmark-data.json", errors)
     parse_date(benchmark_data.get("last_verified"), "benchmark-data.json last_verified", errors)
+    benchmark_rows = benchmark_data.get("benchmarks", [])
+    benchmark_ids = {
+        item.get("id") for item in benchmark_rows
+        if isinstance(item, dict) and isinstance(item.get("id"), str)
+    } if isinstance(benchmark_rows, list) else set()
+    if len(benchmark_rows) != len(EXPECTED_BENCHMARK_IDS) or benchmark_ids != EXPECTED_BENCHMARK_IDS:
+        missing = sorted(EXPECTED_BENCHMARK_IDS - benchmark_ids)
+        unexpected = sorted(benchmark_ids - EXPECTED_BENCHMARK_IDS)
+        errors.append(
+            "benchmark-data.json must contain exactly 23 expected unique topics "
+            f"(missing={missing}, unexpected={unexpected}, rows={len(benchmark_rows) if isinstance(benchmark_rows, list) else 'invalid'})"
+        )
+    for index, item in enumerate(benchmark_rows if isinstance(benchmark_rows, list) else [], start=1):
+        if not isinstance(item, dict) or any(not item.get(field) for field in ("id", "aliases", "benchmark", "review_use")):
+            errors.append(f"benchmark-data.json row {index}: incomplete required fields")
     if benchmark_data.get("do_not_name_source_in_user_outputs") is not True:
         errors.append("benchmark-data.json must keep do_not_name_source_in_user_outputs=true")
     if benchmark_data.get("distribution_profile") == "public":
@@ -200,7 +223,8 @@ def main() -> int:
         return 1
     print(
         f"OK: skill consistency validated ({len(markdown_files)} markdown files, "
-        f"{len(list((ROOT / 'scripts').glob('*.py')))} Python scripts, {len(all_links)} resource links)"
+        f"{len(list((ROOT / 'scripts').glob('*.py')))} Python scripts, {len(all_links)} resource links, "
+        f"{len(benchmark_rows) if isinstance(benchmark_rows, list) else 0} complete benchmark topics)"
     )
     return 0
 

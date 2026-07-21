@@ -8,6 +8,15 @@ Use this as negotiation context, not legal authority. User-facing outputs must r
 
 Default rule: use the 2025 current-year statistic as the primary anchor. Where this file gives exact comparable 2024 and 2025 figures, use the 2024/2025 two-year average. Where 2024 is unavailable or not comparable, use 2025 only and mark that internally.
 
+## Data Completeness Gate
+
+The structured companion contains exactly 23 unique benchmark topics. It is a
+complete JSON object, not a clipped preview: every topic must have a non-empty
+`id`, `aliases`, `benchmark`, and `review_use`. Before release or delivery,
+`scripts/validate_skill_consistency.py` parses the entire file, rejects missing
+or duplicate topics, and confirms all 23 expected IDs. A visible preview being
+shortened by a platform must not be treated as source-data truncation.
+
 ## Structure Baseline
 
 | Metric | 2024 | 2025 | Benchmark |
