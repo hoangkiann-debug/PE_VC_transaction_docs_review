@@ -37,6 +37,7 @@ class PublicReleaseTests(unittest.TestCase):
         self.assertIn("## 常见问题", text)
         self.assertIn("## 常见错误用法与正确处理", text)
         self.assertIn("### 默认低门槛模式", text)
+        self.assertIn("### 普通用户直接照抄", text)
         self.assertIn("### 触发优先级", text)
         self.assertIn("### 参考资料三层导航", text)
         self.assertIn("references/complete-output-example.md", text)
@@ -118,6 +119,15 @@ class PublicReleaseTests(unittest.TestCase):
             )
             self.assertEqual(completed.returncode, 0, completed.stderr)
             self.assertNotIn("version one", state.read_text(encoding="utf-8"))
+            completed = subprocess.run(
+                [sys.executable, str(SCRIPTS / "review_checkpoint.py"), "autosave", str(state),
+                 "document_map", "--unit", "file-001"],
+                text=True, capture_output=True, check=False,
+            )
+            self.assertEqual(completed.returncode, 0, completed.stderr)
+            payload = json.loads(completed.stdout)
+            self.assertEqual(payload["stages"]["document_map"]["status"], "in_progress")
+            self.assertEqual(payload["stages"]["document_map"]["completed_units"], ["file-001"])
         completed = subprocess.run(
             [sys.executable, str(SCRIPTS / "ocr_pdf.py"), "--list-engines"],
             text=True, capture_output=True, check=False,

@@ -2,7 +2,7 @@
   "repository": "PE_VC_transaction_docs_review",
   "display_name": "PE/VC私募交易文件审阅",
   "skill_id": "pe-vc-transaction-docs-review",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "distribution_profile": "public",
   "file_count": 66,
   "files": [
@@ -38,8 +38,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/SKILL.md",
-      "bytes": 23000,
-      "sha256": "197ad856694a108ac02a0f5d5e96786860a623482e5c24d9bd90f14a73508d3c"
+      "bytes": 24941,
+      "sha256": "14cd0ea47e7e6756e237a451085582610dbd43eca3e480678a0c1df7214b7d08"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/agents/openai.yaml",
@@ -133,8 +133,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/faq-and-troubleshooting.md",
-      "bytes": 7668,
-      "sha256": "40f856b17652cffea329e7cb4090a5896559565cb0a09a4103949dee98189ac4"
+      "bytes": 8395,
+      "sha256": "bff988bb6f3237a317d40276cebe094e322b7f11a1c73234b3a0f45eaf4bec52"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/intake-and-routing.md",
@@ -178,8 +178,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/output-templates.md",
-      "bytes": 5993,
-      "sha256": "681f34f91d324d047d55f6170fde2579f470291479974402f8880fe30532834c"
+      "bytes": 7348,
+      "sha256": "9f08b28dccd6aee2a1317255e459615a44985e28e4c17ff83231df05a7ac5abc"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/party-side-positions.md",
@@ -263,8 +263,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/scripts/ocr_pdf.py",
-      "bytes": 6856,
-      "sha256": "5631f09bdc064d7b0137ffc84d48d9f2657c5038a713ef55a3289e1bf0969620"
+      "bytes": 8104,
+      "sha256": "ac2490e2c6f8ef718f6ac8f32f1a080368d1e4cd5929a7b7cb6f16eac2da7d9a"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/scripts/ocr_pdf_macos.py",
@@ -288,8 +288,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/scripts/review_checkpoint.py",
-      "bytes": 7084,
-      "sha256": "a18dbaecb0b9dbae98be92bfab3214a5d36af132db7d489e6f9dd8be865456c0"
+      "bytes": 8184,
+      "sha256": "b11c81f601161ac6c64be4e6100e72de0df0fc577b359c477d2ef700ad938de8"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/scripts/review_schema.py",
@@ -298,8 +298,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/scripts/runtime_self_check.py",
-      "bytes": 4832,
-      "sha256": "66e5477ffe83431954d23b9325810a677615a7c9612a2a78fccd36978d26a09f"
+      "bytes": 5864,
+      "sha256": "1e70305f82c23aa6fa6dacae92afc9a5e1398137e6c85bed7ee9f6d49ca65064"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/scripts/score_blind_evaluation.py",
@@ -333,8 +333,8 @@
     },
     {
       "path": "tests/test_public_release.py",
-      "bytes": 11130,
-      "sha256": "3f4318ddc7002542ef4368506c6a8eacad0c82e24b462e304e5fb65fca2e4a21"
+      "bytes": 11766,
+      "sha256": "8d09bdeda7d1fa0961bb7782b5ee0957bb490cf350fb1b888124c35ced523d1c"
     }
   ]
 }

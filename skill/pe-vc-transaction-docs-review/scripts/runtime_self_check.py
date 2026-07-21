@@ -49,16 +49,19 @@ def build_report() -> dict[str, object]:
             "ready": module_available("lxml"),
             "requires": ["lxml"],
             "fallback": "produce a comment plan instead of native Word comments",
+            "fallback_zh": "改为生成完整批注计划，不影响问题清单",
         },
         "blind_evaluation": {
             "ready": all(module_available(name) for name in ("docx", "lxml", "PIL")),
             "requires": ["python-docx", "lxml", "Pillow"],
             "fallback": "skip synthetic document rendering; core review remains available",
+            "fallback_zh": "跳过模拟文档渲染，核心审阅仍可使用",
         },
         "macos_ocr": {
             "ready": platform.system() == "Darwin" and shutil.which("xcrun") is not None,
             "requires": ["macOS", "xcrun", "Vision framework"],
             "fallback": "request a searchable PDF, original Word file, or clearer scans",
+            "fallback_zh": "请提供带文字层PDF、原始Word或更清晰扫描件",
         },
         "cross_platform_ocr": {
             "ready": bool(
@@ -67,11 +70,13 @@ def build_report() -> dict[str, object]:
             ),
             "requires": ["OCRmyPDF + pdftotext, or Tesseract + pdftoppm"],
             "fallback": "use macOS Vision when available, or request a searchable PDF/Word source",
+            "fallback_zh": "可用时改用macOS Vision，否则请提供带文字层PDF或Word",
         },
         "pdf_text": {
             "ready": bool(shutil.which("pdftotext") or module_available("pypdf") or module_available("fitz")),
             "requires": ["pdftotext, pypdf, or PyMuPDF"],
             "fallback": "provide a searchable PDF/Word source or mark the PDF as unreadable",
+            "fallback_zh": "请提供带文字层PDF或Word，否则将该PDF标记为未实质审阅",
         },
     }
     core_ready = python_ready and all(item["ready"] for item in data_checks.values())
@@ -105,7 +110,15 @@ def build_report() -> dict[str, object]:
     }
 
 
-def print_text(report: dict[str, object]) -> None:
+def print_text(report: dict[str, object], language: str) -> None:
+    if language == "zh-CN":
+        print(f"核心审阅能力：{'已就绪' if report['core_ready'] else '未就绪'}")
+        for error in report["errors"]:
+            print(f"错误：{error}", file=sys.stderr)
+        for name, item in report.get("optional_capabilities", {}).items():
+            if not item["ready"]:
+                print(f"可选能力暂不可用：{name}；{item.get('fallback_zh', item['fallback'])}", file=sys.stderr)
+        return
     print(f"Core review ready: {'yes' if report['core_ready'] else 'no'}")
     for error in report["errors"]:
         print(f"ERROR: {error}", file=sys.stderr)
@@ -116,6 +129,7 @@ def print_text(report: dict[str, object]) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--format", choices=("json", "text"), default="text")
+    parser.add_argument("--language", choices=("zh-CN", "en"), default="zh-CN")
     args = parser.parse_args()
     try:
         report = build_report()
@@ -131,7 +145,7 @@ def main() -> int:
     if args.format == "json":
         print(json.dumps(report, ensure_ascii=False, indent=2))
     else:
-        print_text(report)
+        print_text(report, args.language)
     return 0 if report["core_ready"] else 1
 
 

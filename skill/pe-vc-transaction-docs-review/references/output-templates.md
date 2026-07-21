@@ -5,6 +5,22 @@ so a first-time user can see the expected level of detail. Replace or delete
 that row before using a template for an actual matter; never deliver the
 synthetic row as project work product.
 
+## Delivery Map
+
+The user does not need to choose files or run scripts. The Agent maps the
+requested result to the following template and check automatically:
+
+| User request | Plain-language result | Template or asset | Generation / final check |
+|---|---|---|---|
+| “审一下” / full review | All material issues, proposed wording and negotiation context | `Full Report` below + `assets/issue-log-template-zh.csv` or English equivalent | `scripts/validate_issue_log.py` |
+| “列出重大问题” | Decision-level negotiation points only | `Major Issue List` below + `assets/major-issue-list-template-zh.csv` or English equivalent | `scripts/make_major_issue_list.py` + `scripts/validate_major_issue_list.py` |
+| “加批注” | A separate Word copy with comments; visible text unchanged | `Comment Text` below + `assets/comment-plan-template-zh.csv` or English equivalent | `scripts/make_comment_plan.py` + `scripts/apply_comment_plan.py` |
+| “审本轮红线稿” | Accepted, rejected, reopened and new issues compared with the prior round | `Counterparty Markup Review` below | `scripts/compare_contract_versions.py` + `scripts/update_major_issue_list.py` |
+
+If the user says only “审一下”, default to the first row and recommend a Major
+Issue List when decision-level points exist. Do not ask the user to select a
+CSV or script.
+
 ## Full Report
 
 Localize the whole template to the output language before using it. Chinese agreements should receive Chinese headings and table headers; English agreements should receive English headings and table headers by default.

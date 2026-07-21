@@ -13,6 +13,13 @@ import tempfile
 from pathlib import Path
 
 
+MANUAL_GUIDANCE = (
+    "请提供以下任一种替代材料：1. 带可搜索文字层的PDF；2. 原始Word文件；"
+    "3. 更清晰、按页分拆的扫描件。该文件应标记为未实质审阅，并继续处理其他可读文件。 "
+    "Provide one of: a searchable PDF, the original Word file, or clearer page-by-page scans."
+)
+
+
 def fail(code: str, message: str, next_step: str, return_code: int = 2) -> int:
     print(f"[{code}] {message} Next step: {next_step}", file=sys.stderr)
     return return_code
@@ -102,6 +109,16 @@ def run_tesseract(pdf: Path, output: Path | None, max_pages: int, dpi: int, lang
         return write_or_print("\n\n".join(chunks).strip() + "\n", output)
 
 
+def run_engine(engine: str, pdf: Path, output: Path | None, max_pages: int, dpi: int, language: str) -> int:
+    if engine == "macos-vision":
+        return run_macos(pdf, output, max_pages, dpi)
+    if engine == "ocrmypdf":
+        if max_pages:
+            return fail("OCR-INPUT-003", "--max-pages is not supported by the OCRmyPDF route.", "Use Tesseract/macOS Vision or omit --max-pages.")
+        return run_ocrmypdf(pdf, output)
+    return run_tesseract(pdf, output, max_pages, dpi, language)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("pdf", type=Path, nargs="?")
@@ -126,17 +143,22 @@ def main() -> int:
     engine = args.engine
     if engine == "auto":
         if not engines:
-            return fail("OCR-TOOL-001", "No supported local OCR engine is available.", "Provide a searchable PDF/Word file, or install OCRmyPDF/Tesseract.")
-        engine = engines[0]
+            return fail("OCR-MANUAL-001", "No supported local OCR engine is available.", MANUAL_GUIDANCE)
+        with tempfile.TemporaryDirectory(prefix="pevc_ocr_fallback_") as tmp:
+            for index, candidate in enumerate(engines, start=1):
+                attempt = Path(tmp) / f"attempt-{index}.txt"
+                if run_engine(candidate, pdf, attempt, args.max_pages, args.dpi, args.language) == 0:
+                    try:
+                        extracted = attempt.read_text(encoding="utf-8")
+                    except (OSError, UnicodeError):
+                        extracted = ""
+                    if extracted.strip():
+                        return write_or_print(extracted, args.output)
+                print(f"[OCR-FALLBACK-{index:03d}] {candidate} failed; trying the next local engine.", file=sys.stderr)
+        return fail("OCR-MANUAL-001", "All available local OCR engines failed.", MANUAL_GUIDANCE, 1)
     if engine not in engines:
         return fail("OCR-TOOL-002", f"Requested OCR engine is unavailable: {engine}.", f"Available engines: {', '.join(engines) or 'none'}.")
-    if engine == "macos-vision":
-        return run_macos(pdf, args.output, args.max_pages, args.dpi)
-    if engine == "ocrmypdf":
-        if args.max_pages:
-            return fail("OCR-INPUT-003", "--max-pages is not supported by the OCRmyPDF route.", "Use Tesseract/macOS Vision or omit --max-pages.")
-        return run_ocrmypdf(pdf, args.output)
-    return run_tesseract(pdf, args.output, args.max_pages, args.dpi, args.language)
+    return run_engine(engine, pdf, args.output, args.max_pages, args.dpi, args.language)
 
 
 if __name__ == "__main__":

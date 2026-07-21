@@ -47,6 +47,7 @@
 4. OCR仍失败时，请用户提供原始Word、带文字层PDF或更清晰扫描件。
 5. 交付中列明该文件未实质审阅及其对跨文件判断的影响。
 6. 不等待用户追问：发生 `OCR-001` 时，主动列出“带文字层PDF、原始Word、清晰分拆扫描件”三种替代材料，并继续处理其他可读文件。
+7. `scripts/ocr_pdf.py` 的自动模式应依次尝试全部可用本地引擎，而不是第一个引擎失败就停止。全部失败时输出 `OCR-MANUAL-001`，将上述三种替代材料作为面向用户的接续步骤。
 
 ## 外部连接重试与超时
 
@@ -63,17 +64,20 @@
 - 输入文件不存在、参数错误或核心数据损坏时停止受影响步骤并标记 `RUNTIME-001`；其他可读文件仍继续处理。
 - DOCX结构损坏或XML不完整时，文档提取器捕获异常并返回结构化读取失败；自动建议重新导出Word、另存为可搜索PDF或提供纯文本，不把损坏文件当成无问题。
 - `lxml`、`python-docx`、Pillow、本地OCR引擎或外部连接器属于按功能启用的可选能力。缺失时只停用Word原生批注、模拟评测或OCR等对应功能，不影响文本审阅和问题清单。
-- 长文件包或多轮审阅使用 `scripts/review_checkpoint.py` 保存阶段状态和源文件指纹。进程中断后运行 `resume`；源文件变化时自动把依赖阶段标为需要重做，并保留上一份状态备份用于回滚。
+- 长文件包或多轮审阅使用 `scripts/review_checkpoint.py` 保存阶段状态和源文件指纹。16个内部步骤各自都是保存点；一个步骤内每完成一个文件或条款族，用 `autosave --unit <稳定编号>` 增量保存。进程中断后运行 `resume`；源文件变化时自动把依赖阶段标为需要重做，并保留上一份状态备份用于回滚。
 
 Agent需要定位运行问题时，可使用以下最小命令；普通用户无需执行：
 
 ```text
 python3 scripts/runtime_self_check.py --format json
 python3 scripts/extract_contract_text.py <file> --format json
+python3 scripts/review_checkpoint.py autosave <state.json> <stage> --unit <file-or-clause-id> --artifact <path>
 python3 scripts/review_checkpoint.py resume <state.json> --source <files...>
 python3 scripts/benchmark_lookup.py "liquidation preference" --json
 python3 scripts/validate_skill_consistency.py
 ```
+
+进度文件只保存文件指纹、阶段状态、已完成单元的稳定编号和产物路径，不保存合同正文、批注内容或审阅结论。回滚仅恢复最近一次写入前的 `.bak`，不会修改用户原始交易文件。
 
 ## 高频问答
 

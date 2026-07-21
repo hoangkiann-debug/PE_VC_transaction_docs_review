@@ -19,8 +19,17 @@ STAGES = (
     "document_map",
     "text_extraction",
     "package_analysis",
-    "substantive_review",
+    "output_language",
+    "track_changes",
+    "version_chain",
+    "connectors",
+    "structure_playbook",
+    "clause_review",
+    "market_context",
+    "legal_authority",
+    "party_position",
     "deliverables",
+    "major_issue_list",
     "validation",
 )
 
@@ -86,7 +95,7 @@ def new_state(matter_id: str, sources: list[Path]) -> dict[str, object]:
         "stages": {stage: {"status": "pending", "updated_at": None} for stage in STAGES},
         "artifacts": [],
         "last_error": None,
-        "privacy_note": "Stores file fingerprints and progress only; no contract text.",
+        "privacy_note": "Stores file fingerprints, stable unit IDs, progress, and artifact paths only; no contract text or review conclusions.",
     }
 
 
@@ -100,7 +109,7 @@ def invalidate_after_source_change(state: dict[str, object]) -> None:
         return
     for stage in STAGES[1:]:
         record = stages.get(stage)
-        if isinstance(record, dict) and record.get("status") == "completed":
+        if isinstance(record, dict) and record.get("status") in {"completed", "in_progress"}:
             record["status"] = "stale"
             record["updated_at"] = now()
     state["last_error"] = {
@@ -151,6 +160,12 @@ def main() -> int:
     complete.add_argument("stage", choices=STAGES)
     complete.add_argument("--artifact", action="append", default=[])
 
+    autosave = sub.add_parser("autosave")
+    autosave.add_argument("state", type=Path)
+    autosave.add_argument("stage", choices=STAGES)
+    autosave.add_argument("--unit", action="append", default=[])
+    autosave.add_argument("--artifact", action="append", default=[])
+
     fail = sub.add_parser("fail")
     fail.add_argument("state", type=Path)
     fail.add_argument("stage", choices=STAGES)
@@ -176,8 +191,18 @@ def main() -> int:
                     invalidate_after_source_change(state)
                     state["source_files"] = current
                     write_state(args.state, state)
-            elif args.command == "complete":
-                state["stages"][args.stage] = {"status": "completed", "updated_at": now()}
+            elif args.command in {"complete", "autosave"}:
+                existing = state["stages"].get(args.stage, {})
+                completed_units = list(existing.get("completed_units", [])) if isinstance(existing, dict) else []
+                if args.command == "autosave":
+                    for unit in args.unit:
+                        if unit not in completed_units:
+                            completed_units.append(unit)
+                state["stages"][args.stage] = {
+                    "status": "completed" if args.command == "complete" else "in_progress",
+                    "updated_at": now(),
+                    "completed_units": completed_units,
+                }
                 artifacts = state.setdefault("artifacts", [])
                 for artifact in args.artifact:
                     if artifact not in artifacts:
