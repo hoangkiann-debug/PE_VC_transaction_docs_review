@@ -18,7 +18,16 @@ Resolve before substantive review, using the user's instructions and preliminary
 
 ## Intake Gate
 
-Do not start substantive clause review while mandatory intake is ambiguous.
+Do not force the user to complete the whole intake list. Infer document type,
+language, structure, governing law, version, and likely output from the files
+where reliable, and disclose those assumptions. Only two gaps block the
+corresponding directional conclusion:
+
+- client side is unknown, in which case neutral issue spotting may continue but
+  side-specific drafting must wait; or
+- a later-round acceptance/rejection judgment is requested without a prior
+  draft or verified prior position, in which case current-text risk review may
+  continue but negotiation status must wait.
 
 Before asking the user, perform pre-intake triage:
 
@@ -51,7 +60,10 @@ For first-draft full-package review, mandatory confirmations are:
 - Governing law/dispute forum and local-counsel flag preference.
 - Output language rule.
 
-If any of these remain missing after pre-intake triage, ask concise feedback-style questions and wait for the user's reply. Proceed on assumptions only if the user expressly authorizes that.
+After pre-intake triage, ask only for a blocking client-side or version-baseline
+gap. Infer the remaining items when the documents support a reliable inference;
+otherwise state a limited-review assumption and continue with the unaffected
+work. Do not turn optional preferences into a mandatory questionnaire.
 
 For second-or-later Track Changes / counterparty markup review, mandatory confirmations are:
 
@@ -111,6 +123,16 @@ Please confirm these gaps, then I will start reviewing the counterparty changes.
 ## Trigger Terms
 
 Treat these as in-scope triggers: VC/PE,投融资协议,股东协议,增资协议,增资协议的补充协议,认购协议,章程,SPA,SHA,IRA,M&A,M&AA,MAA,term sheet,红筹,人民币架构,VIE,开曼,美元架构,投资协议,股权转让,股权回购,反稀释,清算优先,领售,共同出售,优先购买,优先认购,保护性条款,董事席位,最优惠待遇.
+
+Trigger priority:
+
+1. Explicit `$pe-vc-transaction-docs-review` invocation.
+2. An uploaded financing document plus a review, comparison, comment, redline,
+   or Major Issue List request.
+3. Clause terms only when the surrounding request is clearly a private-company
+   PE/VC financing matter.
+4. An unreadable or OCR-failed in-scope attachment still triggers intake and
+   degradation handling; it does not silently disable the skill.
 
 ## Exclusions
 

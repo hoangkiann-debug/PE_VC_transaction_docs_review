@@ -36,11 +36,16 @@ class PublicReleaseTests(unittest.TestCase):
         self.assertIn("## 典型使用案例", text)
         self.assertIn("## 常见问题", text)
         self.assertIn("## 常见错误用法与正确处理", text)
+        self.assertIn("### 默认低门槛模式", text)
+        self.assertIn("### 触发优先级", text)
+        self.assertIn("### 参考资料三层导航", text)
         self.assertIn("references/complete-output-example.md", text)
         self.assertIn("references/faq-and-troubleshooting.md", text)
         self.assertIn("license: Apache-2.0", text)
         self.assertTrue((SKILL / "agents" / "openai.yaml").is_file())
         self.assertTrue((SKILL / "assets" / "review-preferences-template.md").is_file())
+        self.assertTrue((SCRIPTS / "review_checkpoint.py").is_file())
+        self.assertTrue((SCRIPTS / "ocr_pdf.py").is_file())
 
     def test_outward_documentation_copy(self):
         forbidden = [
@@ -99,6 +104,26 @@ class PublicReleaseTests(unittest.TestCase):
         )
         self.assertEqual(completed.returncode, 0, completed.stderr)
         self.assertGreater(len(json.loads(completed.stdout)["matches"]), 0)
+
+    def test_checkpoint_and_ocr_router(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / "agreement.txt"
+            state = root / "review-state.json"
+            source.write_text("version one", encoding="utf-8")
+            completed = subprocess.run(
+                [sys.executable, str(SCRIPTS / "review_checkpoint.py"), "init", str(state),
+                 "--matter-id", "synthetic", "--source", str(source)],
+                text=True, capture_output=True, check=False,
+            )
+            self.assertEqual(completed.returncode, 0, completed.stderr)
+            self.assertNotIn("version one", state.read_text(encoding="utf-8"))
+        completed = subprocess.run(
+            [sys.executable, str(SCRIPTS / "ocr_pdf.py"), "--list-engines"],
+            text=True, capture_output=True, check=False,
+        )
+        self.assertEqual(completed.returncode, 0, completed.stderr)
+        self.assertIsInstance(json.loads(completed.stdout)["available_engines"], list)
 
     def test_package_conflicts_and_clean_version_delta(self):
         package_matrix = load_module("build_package_matrix")

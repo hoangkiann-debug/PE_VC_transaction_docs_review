@@ -273,7 +273,7 @@ def extract_pdf(path: Path) -> dict:
     if not paragraphs:
         _add_warning(
             result,
-            "No text extracted; this may be a scanned or image-only PDF. Run scripts/ocr_pdf_macos.py or perform manual/OCR review.",
+            "No text extracted; this may be a scanned or image-only PDF. Run scripts/ocr_pdf.py or perform manual/OCR review.",
         )
     return result
 

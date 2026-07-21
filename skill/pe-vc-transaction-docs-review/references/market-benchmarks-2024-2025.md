@@ -1,6 +1,6 @@
 # Market Benchmarks 2024-2025
 
-The filename is retained for compatibility with older workflow references.
+The filename matches the two principal annual datasets used for this benchmark.
 Verification date: 2026-07-10. Independently verify historical figures before
 high-stakes reliance or updates.
 

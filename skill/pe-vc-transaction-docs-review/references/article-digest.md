@@ -12,7 +12,7 @@ For recent practice developments, use
 `references/recent-practice-stress-tests-2024-2026.md`. These prompts are a
 research and review aid, not proof of market frequency or legal authority.
 
-For market context, use `references/market-benchmarks-2023-2024.md` or
+For market context, use `references/market-benchmarks-2024-2025.md` or
 `scripts/benchmark_lookup.py`. Treat all figures as historical negotiation
 context, never as legal requirements, and independently verify them before
 high-stakes reliance or future updates.

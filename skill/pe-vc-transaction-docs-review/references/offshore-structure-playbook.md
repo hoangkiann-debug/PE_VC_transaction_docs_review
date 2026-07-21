@@ -24,6 +24,18 @@ VIE:
 - Offshore parent controls PRC operating entities through contractual control arrangements.
 - Review control agreements, business licenses, regulatory sensitivity, PRC law change triggers, disclosure, and special rights termination for listing.
 
+Mixed direct-holding/VIE:
+
+- Treat the group as mixed when some PRC businesses are equity-held but regulated
+  operations, licenses, data, IP, revenue or personnel remain in VIE entities.
+- Build an entity-by-entity map instead of labeling the whole group simply
+  "direct holding" or "VIE". Apply direct-holding checks to equity-held entities
+  and VIE validity, control, license and unwinding checks to contract-controlled
+  entities.
+- A lower overall market share for offshore or VIE structures does not justify
+  removing these checks. It changes the negotiation context, not the required
+  legal and cross-document review for an actual offshore/VIE matter.
+
 ## Core Review Focus
 
 Every key VC/PE clause in the benchmark remains relevant under offshore USD structure:

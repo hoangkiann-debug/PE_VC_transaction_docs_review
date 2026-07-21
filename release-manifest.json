@@ -2,9 +2,9 @@
   "repository": "PE_VC_transaction_docs_review",
   "display_name": "PE/VC私募交易文件审阅",
   "skill_id": "pe-vc-transaction-docs-review",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "distribution_profile": "public",
-  "file_count": 64,
+  "file_count": 66,
   "files": [
     {
       "path": ".gitignore",
@@ -38,8 +38,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/SKILL.md",
-      "bytes": 20219,
-      "sha256": "126597a4e49bcac37855957b6946b3ed903476977402d1ecf409f6d768d9a75f"
+      "bytes": 23000,
+      "sha256": "197ad856694a108ac02a0f5d5e96786860a623482e5c24d9bd90f14a73508d3c"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/agents/openai.yaml",
@@ -53,33 +53,33 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/assets/comment-plan-template-zh.csv",
-      "bytes": 104,
-      "sha256": "c10dbaa76db4445f8322658aaf344c501f5d4e3cf22d6a101b1092de094f74a1"
+      "bytes": 440,
+      "sha256": "2b4f90d48743617db52f0be8bcecb50d48fc6874fd4828734c1ecb3df0205471"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/assets/comment-plan-template.csv",
-      "bytes": 108,
-      "sha256": "90270d583f86b617e10cee0e3bd39864538567361b44300e0b2f207fb5d92eab"
+      "bytes": 512,
+      "sha256": "5d4b5292ddfb6cb8e67d937e46e016011e9e833452727ea65fe8a01768746ab4"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/assets/issue-log-template-zh.csv",
-      "bytes": 221,
-      "sha256": "d4e6012db9b00c38efc763bfa9f511e6ad4d86692f5de5a5292f6bba68449371"
+      "bytes": 755,
+      "sha256": "970674c7b40a94082ff7357f6e924a9a19d78724f161cd549594f7549b5f270a"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/assets/issue-log-template.csv",
-      "bytes": 215,
-      "sha256": "873b30cbcf7ca34e73b4daa9ef699787e59d7b6c4c892d1b3f022502938db3c2"
+      "bytes": 839,
+      "sha256": "b76e35f9e04ac9b6c34bac6041a55fed86d84af9dfaa01ba46462f99bed388b6"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/assets/major-issue-list-template-zh.csv",
-      "bytes": 85,
-      "sha256": "e6402b112159867d106a38c275f23e36777f21f9219b31c88ec9301caf9a6633"
+      "bytes": 359,
+      "sha256": "19285dc69a7db700bf825a7b9b6be791c54f0cd9f4210885caca703e472d7bab"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/assets/major-issue-list-template.csv",
-      "bytes": 95,
-      "sha256": "7454766573bb1d78fe1f18e7ed1e89de72875fe95d2d4778acacd44d18b4aa46"
+      "bytes": 397,
+      "sha256": "f86cd1ce9c35820b19ade0b0318c60a50358712fc9bf11063a73a3e70a100220"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/assets/matter-profile-template.md",
@@ -94,7 +94,7 @@
     {
       "path": "skill/pe-vc-transaction-docs-review/references/article-digest.md",
       "bytes": 922,
-      "sha256": "b1d666f2af2859368feb481c2320033027d903703620fec7c6d22abf63ba8a10"
+      "sha256": "539d9b07249734647954646c09ab9da181b0dc47e740830c196a40219b32decf"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/benchmark-data.json",
@@ -113,13 +113,13 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/complete-output-example.md",
-      "bytes": 5695,
-      "sha256": "6b135a4843d74a14f66d28bd7811e448a0f0bd71b59fcbe53d9c47c51dab332e"
+      "bytes": 7279,
+      "sha256": "1966b3f44dc21b1547e737de620e5b7c0d9b07e137e2639c35c3fd3339f48cba"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/connector-degradation-policy.md",
-      "bytes": 2729,
-      "sha256": "2925cdb3c6b5d9173a3f0b7c3dd401c9b9c679735971a5f35bbca716cf48b9c9"
+      "bytes": 2834,
+      "sha256": "1282f5bf8e7bfa2715305eab6401525fc04f4c797e5ae706bb16627b2c7d25a0"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/entity-and-diligence-data-layer.md",
@@ -133,13 +133,13 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/faq-and-troubleshooting.md",
-      "bytes": 5979,
-      "sha256": "0266dc05e5ece8fa7cf5744927f9693f9d974c6ae3bd7b44c601b0f2944f8120"
+      "bytes": 7668,
+      "sha256": "40f856b17652cffea329e7cb4090a5896559565cb0a09a4103949dee98189ac4"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/intake-and-routing.md",
-      "bytes": 10225,
-      "sha256": "4641b2c3652d08a370f292687cddb12f5cb175cdb26ec26f9eb7492804c17651"
+      "bytes": 11288,
+      "sha256": "5cc836b02bdc519b3594f0fd6280f7a414739f1e59830e09da01fc55e3c35476"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/legal-authorities.json",
@@ -152,9 +152,9 @@
       "sha256": "8a74a257a264c83e2500b0600f74dfa08f3be276bb48087b2ab7a67314a58193"
     },
     {
-      "path": "skill/pe-vc-transaction-docs-review/references/market-benchmarks-2023-2024.md",
-      "bytes": 12772,
-      "sha256": "59148f55e8836cc4c7fe3f93cfcfcc02e9d9ba9cc41150ff3ab22d6df3a5f457"
+      "path": "skill/pe-vc-transaction-docs-review/references/market-benchmarks-2024-2025.md",
+      "bytes": 12777,
+      "sha256": "699cde98c5863eb49c90e1ab9cd9909281f5288aeca8902e83dead42da77a3f1"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/matter-profile-and-confidentiality.md",
@@ -173,13 +173,13 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/offshore-structure-playbook.md",
-      "bytes": 6323,
-      "sha256": "87512aeac4d35071dd2af372ae81a5730ea4a6e91343310b911ffcf6bc74abad"
+      "bytes": 6987,
+      "sha256": "c239adc10c4b6dabf7696c226cc776d7188b188a04b12c89b10f035f87582513"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/output-templates.md",
-      "bytes": 5724,
-      "sha256": "a750714674419508e6a3142920f553a9a1f55a46658ed238b4afa9fa29d21e99"
+      "bytes": 5993,
+      "sha256": "681f34f91d324d047d55f6170fde2579f470291479974402f8880fe30532834c"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/references/party-side-positions.md",
@@ -243,8 +243,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/scripts/extract_contract_text.py",
-      "bytes": 14672,
-      "sha256": "60e49088a7f89021f57cc4cd7ac84960b0a2e7773984938d2adcea1ccd13426b"
+      "bytes": 14666,
+      "sha256": "464371f8ef6d6b3d82be41d4f1febd57aff67f3c52bb7447cc08e902e8cb68c1"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/scripts/legal_authority_lookup.py",
@@ -260,6 +260,11 @@
       "path": "skill/pe-vc-transaction-docs-review/scripts/make_major_issue_list.py",
       "bytes": 5731,
       "sha256": "333578d1c3ff66576f73a545ce3cdb83970ab355012d5c29b4a183a8a5d918b7"
+    },
+    {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/ocr_pdf.py",
+      "bytes": 6856,
+      "sha256": "5631f09bdc064d7b0137ffc84d48d9f2657c5038a713ef55a3289e1bf0969620"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/scripts/ocr_pdf_macos.py",
@@ -282,14 +287,19 @@
       "sha256": "36ccb76f5be7615e1d4fea422fda018275f3a08aff87d19712a38c16c6cb1f91"
     },
     {
+      "path": "skill/pe-vc-transaction-docs-review/scripts/review_checkpoint.py",
+      "bytes": 7084,
+      "sha256": "a18dbaecb0b9dbae98be92bfab3214a5d36af132db7d489e6f9dd8be865456c0"
+    },
+    {
       "path": "skill/pe-vc-transaction-docs-review/scripts/review_schema.py",
       "bytes": 8669,
       "sha256": "9e99e6b9029a138c68952640ed24ecd3f3b4123abe0f23cbd67d94eb10e6d732"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/scripts/runtime_self_check.py",
-      "bytes": 4344,
-      "sha256": "0d90cc2440270f35c934ec5672f544d74116a824223d2847e97df77c6c6ae561"
+      "bytes": 4832,
+      "sha256": "66e5477ffe83431954d23b9325810a677615a7c9612a2a78fccd36978d26a09f"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/scripts/score_blind_evaluation.py",
@@ -323,8 +333,8 @@
     },
     {
       "path": "tests/test_public_release.py",
-      "bytes": 9787,
-      "sha256": "450f6d7b1e8d197605774cda25d4d1158b1d6d1ae8e343bc2dfd76e940b16996"
+      "bytes": 11130,
+      "sha256": "3f4318ddc7002542ef4368506c6a8eacad0c82e24b462e304e5fb65fca2e4a21"
     }
   ]
 }

@@ -60,10 +60,18 @@ def build_report() -> dict[str, object]:
             "requires": ["macOS", "xcrun", "Vision framework"],
             "fallback": "request a searchable PDF, original Word file, or clearer scans",
         },
+        "cross_platform_ocr": {
+            "ready": bool(
+                (shutil.which("ocrmypdf") and shutil.which("pdftotext"))
+                or (shutil.which("tesseract") and shutil.which("pdftoppm"))
+            ),
+            "requires": ["OCRmyPDF + pdftotext, or Tesseract + pdftoppm"],
+            "fallback": "use macOS Vision when available, or request a searchable PDF/Word source",
+        },
         "pdf_text": {
-            "ready": shutil.which("pdftotext") is not None,
-            "requires": ["pdftotext"],
-            "fallback": "use another local extractor or mark the PDF as unreadable",
+            "ready": bool(shutil.which("pdftotext") or module_available("pypdf") or module_available("fitz")),
+            "requires": ["pdftotext, pypdf, or PyMuPDF"],
+            "fallback": "provide a searchable PDF/Word source or mark the PDF as unreadable",
         },
     }
     core_ready = python_ready and all(item["ready"] for item in data_checks.values())

@@ -1,5 +1,10 @@
 # Output Templates
 
+The six CSV templates under `assets/` contain one clearly marked synthetic row
+so a first-time user can see the expected level of detail. Replace or delete
+that row before using a template for an actual matter; never deliver the
+synthetic row as project work product.
+
 ## Full Report
 
 Localize the whole template to the output language before using it. Chinese agreements should receive Chinese headings and table headers; English agreements should receive English headings and table headers by default.

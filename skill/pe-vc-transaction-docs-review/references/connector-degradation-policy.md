@@ -60,6 +60,7 @@ If Word-comment insertion or tracked changes cannot be performed:
 If PDF text extraction is empty:
 
 - Treat the PDF as scanned/image-only until proven otherwise.
-- Run `scripts/ocr_pdf_macos.py` on macOS where feasible.
+- Run `scripts/ocr_pdf.py` to select an available local engine; it can delegate
+  to `scripts/ocr_pdf_macos.py` on macOS or use OCRmyPDF/Tesseract when available.
 - If OCR is not run or fails, mark the file as not substantively reviewed and request an OCR text layer or Word/native source file.
 - Report the applicable `OCR-*` problem number and the concrete next step from `references/faq-and-troubleshooting.md`.
