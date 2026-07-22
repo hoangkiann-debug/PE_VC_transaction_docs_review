@@ -4,7 +4,7 @@ title: "PE/VC私募交易文件审阅"
 type: software
 authors:
   - name: "Gardner's Vault"
-version: "0.1.11"
+version: "0.1.12"
 date-released: "2026-07-22"
 url: "https://github.com/hoangkiann-debug/PE_VC_transaction_docs_review"
 repository-code: "https://github.com/hoangkiann-debug/PE_VC_transaction_docs_review"

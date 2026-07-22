@@ -1,5 +1,11 @@
 ---
 name: pe-vc-transaction-docs-review
+slug: pe-vc-transaction-docs-review
+version: 0.1.12
+displayName: "PE/VC私募交易文件审阅"
+summary: "面向未上市公司股权融资，覆盖初稿、红线稿、跨文件冲突、市场惯例与重大问题清单。"
+tags: ["法律", "PE/VC", "股权融资", "交易文件审阅"]
+homepage: "https://github.com/hoangkiann-debug/PE_VC_transaction_docs_review"
 description: "面向未上市公司股权融资的专业交易文件审阅能力。适用于境内人民币架构及红筹/VIE 美元架构（尽管当前使用比例有所下降）；支持公司/创始人方、投资人、领投/跟投及战略投资人等不同立场；可审阅首轮整套文件初稿，跟踪后续多轮红线版本，并核验跨文件之间的冲突；可输出完整的修改意见与建议、修订后版本、问题清单以及 Major Issue List（重大问题清单）等；突出优势是结合大量同类市场项目的统计数据，对于同一核心条款，不仅可提示市场主流做法与写法，还能提供不同做法的大致市场采用比例，并进一步给出相应的谈判建议。适用于增资协议、认购协议、股东协议、公司章程、SPA、SHA、IRA、M&A/M&AA、term sheet、side letter及Track Changes。基金设立备案、纯AMAC事项、破产重整投资、单独许可/BD合同及已上市公司证券争议不属于主要适用范围，除非与本次未上市公司投融资协议审阅直接相关。"
 license: Apache-2.0
 metadata:

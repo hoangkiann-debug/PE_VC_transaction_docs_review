@@ -2,7 +2,7 @@
   "repository": "PE_VC_transaction_docs_review",
   "display_name": "PE/VC私募交易文件审阅",
   "skill_id": "pe-vc-transaction-docs-review",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "release_date": "2026-07-22",
   "official_publisher": "Gardner's Vault",
   "copyright_holder": "Jiang Tao",
@@ -24,13 +24,13 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 693,
-      "sha256": "30591823de65bc13d28f8d5e520227409a056f072f0a920afa2ebaa8db9129cd"
+      "bytes": 757,
+      "sha256": "49251e115c61ac38f34f9fdc2ee6ceab20fe448976ad1ce8cbeb2ef02eafd3fe"
     },
     {
       "path": "CITATION.cff",
       "bytes": 544,
-      "sha256": "6d93131b5771411426f4364bbbe39713912af38160c8fd3ed68e0a7cbb9b4184"
+      "sha256": "1db1f9d7aaba1f9b86fbbce8c8bbe0e5c1ecd234a21551c58ed6d61eb1a473ff"
     },
     {
       "path": "DISCLAIMER.md",
@@ -74,8 +74,8 @@
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/SKILL.md",
-      "bytes": 26967,
-      "sha256": "7ffe1f48e33408eae05fa4a5a7cf0d38f5f5d2893d0c5539c998b0ff5fc0f2a9"
+      "bytes": 27335,
+      "sha256": "37234451178ae81a8e03c0760df263a9147303faffbc360991040dfcc91a9333"
     },
     {
       "path": "skill/pe-vc-transaction-docs-review/agents/openai.yaml",
